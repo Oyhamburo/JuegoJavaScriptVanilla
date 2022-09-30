@@ -1,40 +1,44 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = 1024
-canvas.height = 580
+canvas.width = 1280
+canvas.height = 720
 
 const collisionsMap = []
-for (let i = 0; i < collisions.length; i += 20) {
-    collisionsMap.push(collisions.slice(i, 20 + i))
+// Mapeo de colisiones
+for (let i = 0; i < collisions.length; i += 50) {
+    collisionsMap.push(collisions.slice(i, 50 + i))
 }
 
 const boundaries = []
 const offset = {
-    x: 0,
-    y: -340
+    x: -1400,
+    y: -1000
 }
-
+// Mapeo de colisiones
 collisionsMap.forEach((row, i) => {
     row.forEach((Symbol, j) => {
-        if (Symbol === 2144)
+        //numero que represente la colision
+        if (Symbol === 2274)
             boundaries.push(
                 new Boundary({
                     position: {
                         x: j * Boundary.width + offset.x,
                         y: i * Boundary.height + offset.y
                     }
+
                 })
             )
     })
 })
 
+
+//Defino Mapa
 const image = new Image()
-image.src = './img/playaKsaMap.png'
-
+image.src = './img/v.0.1/map.png'
 const foregroundImage = new Image()
-foregroundImage.src = './img/playaKsaMapTop.png'
-
+foregroundImage.src = './img/v.0.1/mapForeground.png'
+//Defino Image del player
 const playerImageDown = new Image()
 playerImageDown.src = './img/playerDown.png'
 const playerImageUp = new Image()
@@ -53,7 +57,7 @@ const player = new Sprite({
         y: canvas.height / 2 - 64 / 2
     },
     image: playerImageDown,
-    frames: {
+    frames: { 
         max: 4
     },
     sprites:{
@@ -98,6 +102,8 @@ const keys = {
 
 const movables = [background, ...boundaries, foreground]
 
+
+//Funcion que permite detectar un cubo por los cuatro lados | devuelve true o false para detener movimiento del player
 function rectangularCollision({ rectangle1, rectangle2 }) {
     return (
         rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&

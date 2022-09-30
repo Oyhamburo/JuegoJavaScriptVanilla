@@ -1,3 +1,4 @@
+// Visualizacion del mapa y del personaje
 class Sprite {
     constructor({ position, velocity, image, frames = { max: 1 }, sprites }) {
         this.position = position
@@ -11,6 +12,7 @@ class Sprite {
         this.moving = false
         this.sprites= sprites
     }
+    //funcion para imprimir una imagen en 
     draw() {
         c.drawImage(
             this.image,
@@ -34,6 +36,7 @@ class Sprite {
         }
     }
 }
+// Perimetro Collisiones
 class Boundary {
     static width = 64
     static height = 64
@@ -43,7 +46,7 @@ class Boundary {
         this.height = 64
     }
     draw() {
-        c.fillStyle = 'rgba(255,0,0,0.2)'
+        c.fillStyle = 'rgba(255,0,0,0)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
