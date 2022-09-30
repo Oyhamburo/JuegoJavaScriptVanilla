@@ -46,7 +46,20 @@ class Boundary {
         this.height = 64
     }
     draw() {
-        c.fillStyle = 'rgba(255,0,0,0)'
+        c.fillStyle = 'rgba(255,0,0,0.2)'
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
+}
+class BoundaryDoor {
+    static width = 64
+    static height = 64
+    constructor({ position }) {
+        this.position = position
+        this.width = 64
+        this.height = 64
+    }
+    draw() {
+        c.fillStyle = 'rgba(0,0,255,0.2)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }

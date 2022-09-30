@@ -5,17 +5,22 @@ canvas.width = 1280
 canvas.height = 720
 
 const collisionsMap = []
+const doorMap = []
 // Mapeo de colisiones
 for (let i = 0; i < collisions.length; i += 50) {
     collisionsMap.push(collisions.slice(i, 50 + i))
 }
+// Mapeo de puertas
+for (let i = 0; i < doors.length; i += 50) {
+    doorMap.push(doors.slice(i, 50 + i))
+}
 
+// Mapeo de colisiones
 const boundaries = []
 const offset = {
     x: -1400,
     y: -1000
 }
-// Mapeo de colisiones
 collisionsMap.forEach((row, i) => {
     row.forEach((Symbol, j) => {
         //numero que represente la colision
@@ -25,6 +30,27 @@ collisionsMap.forEach((row, i) => {
                     position: {
                         x: j * Boundary.width + offset.x,
                         y: i * Boundary.height + offset.y
+                    }
+
+                })
+            )
+    })
+})
+// Mapeo de puertas
+const boundariesDoors = []
+const offsetDoor = {
+    x: -1400,
+    y: -1000
+}
+doorMap.forEach((row, i) => {
+    row.forEach((Symbol, j) => {
+        //numero que represente la colision
+        if (Symbol === 2275)
+        boundariesDoors.push(
+                new BoundaryDoor({
+                    position: {
+                        x: j * BoundaryDoor.width + offsetDoor.x,
+                        y: i * BoundaryDoor.height + offsetDoor.y
                     }
 
                 })
@@ -100,11 +126,20 @@ const keys = {
 }
 
 
-const movables = [background, ...boundaries, foreground]
+const movables = [background, ...boundaries,...boundariesDoors, foreground]
 
 
 //Funcion que permite detectar un cubo por los cuatro lados | devuelve true o false para detener movimiento del player
 function rectangularCollision({ rectangle1, rectangle2 }) {
+    return (
+        rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
+        rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
+        rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
+        rectangle1.position.y + rectangle1.height >= rectangle2.position.y
+    )
+}
+
+function rectangularCollisionDoor({ rectangle1, rectangle2 }) {
     return (
         rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
         rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
@@ -123,9 +158,22 @@ function animate() {
             rectangle1: player,
             rectangle2: boundary
         })) {
-            console.log("Collision")
+            console.log("CollisionBoundary")
         }
     })
+    boundariesDoors.forEach((boundary) => {
+        boundary.draw()
+
+        if (rectangularCollisionDoor({
+            rectangle1: player,
+            rectangle2: boundary
+        })) {
+            console.log("CollisionDoors")
+        }
+    })
+    
+
+    
     player.draw()
     foreground.draw()
 
@@ -143,7 +191,7 @@ function animate() {
                     y: boundary.position.y +3
                 }}
             })) {
-                console.log("Collision")
+                // console.log("Collision")
                 moving = false
                 break
             }
@@ -152,6 +200,22 @@ function animate() {
         movables.forEach((movable) => {
             movable.position.y += 3
         })
+
+
+        for (let i = 0; i<boundariesDoors.length;i++){
+            const boundary = boundariesDoors[i]
+            if (rectangularCollisionDoor({
+                rectangle1: player,
+                rectangle2: {...boundary, position: {
+                    x: boundary.position.x,
+                    y: boundary.position.y +3
+                }}
+            })) {
+                console.log("Activar Nuevo Mapa")
+                // moving = false
+                break
+            }
+        }
         
     }
     else if (keys.a.pressed && lastKey == 'a') {
