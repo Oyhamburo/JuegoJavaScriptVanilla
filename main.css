@@ -3,3 +3,28 @@ body{
     display: flex;
     justify-content: center;
 }
+.container{
+    display: inline-block;
+    position: relative;
+}
+.container__transitionDoor{
+    position: absolute;
+    background-color: #000000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    animation-duration: 0.5s;  
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    opacity: 0;
+}
+@keyframes trans-door-open {
+    0%   { opacity: 0;}
+    100%  { opacity: 1; }
+}
+@keyframes trans-door-closed {
+    0%   { opacity: 1;}
+    100%  { opacity: 0 ; }
+}

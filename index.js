@@ -1,11 +1,18 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
-
+const screen = document.querySelector('#transitionDoor')
 canvas.width = 1280
 canvas.height = 720
 
+
+
+
+//Perimiteros y puertas
 const collisionsMap = []
 const doorMap = []
+const exitCementeryMap = []
+
+
 // Mapeo de colisiones
 for (let i = 0; i < collisions.length; i += 50) {
     collisionsMap.push(collisions.slice(i, 50 + i))
@@ -14,6 +21,7 @@ for (let i = 0; i < collisions.length; i += 50) {
 for (let i = 0; i < doors.length; i += 50) {
     doorMap.push(doors.slice(i, 50 + i))
 }
+
 
 // Mapeo de colisiones
 const boundaries = []
@@ -31,12 +39,11 @@ collisionsMap.forEach((row, i) => {
                         x: j * Boundary.width + offset.x,
                         y: i * Boundary.height + offset.y
                     }
-
                 })
             )
     })
 })
-// Mapeo de puertas
+// Mapeo de puertas Inicio
 const boundariesDoors = []
 const offsetDoor = {
     x: -1400,
@@ -45,13 +52,14 @@ const offsetDoor = {
 doorMap.forEach((row, i) => {
     row.forEach((Symbol, j) => {
         //numero que represente la colision
-        if (Symbol === 2275)
-        boundariesDoors.push(
+        if (Symbol === 2275 || Symbol === 3333 || Symbol === 4444 || Symbol === 5555 || Symbol === 6666)
+            boundariesDoors.push(
                 new BoundaryDoor({
                     position: {
                         x: j * BoundaryDoor.width + offsetDoor.x,
                         y: i * BoundaryDoor.height + offsetDoor.y
-                    }
+                    },
+                    symbol: Symbol
 
                 })
             )
@@ -60,9 +68,9 @@ doorMap.forEach((row, i) => {
 
 
 //Defino Mapa
-const image = new Image()
-image.src = './img/v.0.1/map.png'
-const foregroundImage = new Image()
+let image = new Image()
+image.src = './img/v.0.1/MapaV.0.2.png'
+let foregroundImage = new Image()
 foregroundImage.src = './img/v.0.1/mapForeground.png'
 //Defino Image del player
 const playerImageDown = new Image()
@@ -74,6 +82,8 @@ playerImageLeft.src = './img/playerLeft.png'
 const playerImageRigth = new Image()
 playerImageRigth.src = './img/playerRigth.png'
 
+let image2 = new Image()
+image2.src = './img/v.0.1/prueba.png'
 
 
 
@@ -83,10 +93,10 @@ const player = new Sprite({
         y: canvas.height / 2 - 64 / 2
     },
     image: playerImageDown,
-    frames: { 
+    frames: {
         max: 4
     },
-    sprites:{
+    sprites: {
         up: playerImageUp,
         left: playerImageLeft,
         rigth: playerImageRigth,
@@ -100,6 +110,13 @@ const background = new Sprite({
         y: offset.y
     },
     image: image
+})
+const background2 = new Sprite({
+    position: {
+        x: offset.x,
+        y: offset.y
+    },
+    image: image2
 })
 
 const foreground = new Sprite({
@@ -125,8 +142,8 @@ const keys = {
     }
 }
 
-
-const movables = [background, ...boundaries,...boundariesDoors, foreground]
+// Agragar para permanecer un fondo statico
+const movables = [background, ...boundaries, ...boundariesDoors, foreground]
 
 
 //Funcion que permite detectar un cubo por los cuatro lados | devuelve true o false para detener movimiento del player
@@ -147,10 +164,10 @@ function rectangularCollisionDoor({ rectangle1, rectangle2 }) {
         rectangle1.position.y + rectangle1.height >= rectangle2.position.y
     )
 }
-
 function animate() {
-    window.requestAnimationFrame(animate)
+    const animationId = window.requestAnimationFrame(animate)
     background.draw()
+    //Solo dibujan
     boundaries.forEach((boundary) => {
         boundary.draw()
 
@@ -158,7 +175,7 @@ function animate() {
             rectangle1: player,
             rectangle2: boundary
         })) {
-            console.log("CollisionBoundary")
+            // console.log("CollisionBoundary")
         }
     })
     boundariesDoors.forEach((boundary) => {
@@ -168,121 +185,157 @@ function animate() {
             rectangle1: player,
             rectangle2: boundary
         })) {
-            console.log("CollisionDoors")
+            // console.log("CollisionDoors")
         }
     })
-    
-
-    
     player.draw()
     foreground.draw()
 
+    //solo detecta en caso de que estes moviendote dentro de la zona
+    //Se usa para pasto del pokemon
+    if (keys.w.pressed) {
+        // Colision con puertas
+        for (let i = 0; i < boundariesDoors.length; i++) {
+            const door = boundariesDoors[i]
+            const overlappingArea = (Math.min(player.position.x + player.width, door.position.x + door.width)
+                - Math.max(player.position.x, door.position.x))
+                * (Math.min(player.position.y + player.height, door.position.y + door.height)
+                    - Math.max(player.position.y, door.position.y))
+
+            if (rectangularCollisionDoor({
+                rectangle1: player,
+                rectangle2: door
+            }) &&
+                overlappingArea > (player.width * player.height) / 2
+            ) {
+                // console.log(door.symbol)
+                window.cancelAnimationFrame(animationId)
+                switch (door.symbol) {
+                    case 3333:
+                        console.log('Bienvenido al Camino')
+                        break;
+                    case 2275:
+                        console.log('Bienvenido al Cementery')
+                        test()
+                        break;
+                    case 4444:
+                        console.log('Bienvenido la Armeria')
+                        break;
+                    case 5555:
+                        console.log('Bienvenido a Posiones')
+                        break;
+                    case 6666:
+                        console.log('Bienvenido al Astillero')
+                        break;
+                    default:
+                        break;
+                }
+
+                // break
+            }
+        }
+    }
+
     let moving = true
     player.moving = false
+    //KEYS Pressed
     if (keys.w.pressed && lastKey == 'w') {
         player.moving = true
-        player.image= player.sprites.up
-        for (let i = 0; i<boundaries.length;i++){
+        player.image = player.sprites.up
+        //Colision con el perimetro del mapa
+        for (let i = 0; i < boundaries.length; i++) {
             const boundary = boundaries[i]
             if (rectangularCollision({
                 rectangle1: player,
-                rectangle2: {...boundary, position: {
-                    x: boundary.position.x,
-                    y: boundary.position.y +3
-                }}
+                rectangle2: {
+                    ...boundary, position: {
+                        x: boundary.position.x,
+                        y: boundary.position.y + 3
+                    }
+                }
             })) {
                 // console.log("Collision")
                 moving = false
                 break
             }
         }
-        if(moving)
-        movables.forEach((movable) => {
-            movable.position.y += 3
-        })
+        if (moving)
+            movables.forEach((movable) => {
+                movable.position.y += 3
+            })
 
 
-        for (let i = 0; i<boundariesDoors.length;i++){
-            const boundary = boundariesDoors[i]
-            if (rectangularCollisionDoor({
-                rectangle1: player,
-                rectangle2: {...boundary, position: {
-                    x: boundary.position.x,
-                    y: boundary.position.y +3
-                }}
-            })) {
-                console.log("Activar Nuevo Mapa")
-                // moving = false
-                break
-            }
-        }
-        
+
     }
     else if (keys.a.pressed && lastKey == 'a') {
         player.moving = true
-        player.image= player.sprites.left
-        for (let i = 0; i<boundaries.length;i++){
+        player.image = player.sprites.left
+        for (let i = 0; i < boundaries.length; i++) {
             const boundary = boundaries[i]
             if (rectangularCollision({
                 rectangle1: player,
-                rectangle2: {...boundary, position: {
-                    x: boundary.position.x +3,
-                    y: boundary.position.y
-                }}
+                rectangle2: {
+                    ...boundary, position: {
+                        x: boundary.position.x + 3,
+                        y: boundary.position.y
+                    }
+                }
             })) {
-                console.log("Collision")
+                // console.log("Collision")
                 moving = false
                 break
             }
         }
-        if(moving)
-        movables.forEach((movable) => {
-            movable.position.x += 3
-        })
+        if (moving)
+            movables.forEach((movable) => {
+                movable.position.x += 3
+            })
     }
     else if (keys.s.pressed && lastKey == 's') {
         player.moving = true
-        player.image= player.sprites.down
-        for (let i = 0; i<boundaries.length;i++){
+        player.image = player.sprites.down
+        for (let i = 0; i < boundaries.length; i++) {
             const boundary = boundaries[i]
             if (rectangularCollision({
                 rectangle1: player,
-                rectangle2: {...boundary, position: {
-                    x: boundary.position.x,
-                    y: boundary.position.y -3
-                }}
+                rectangle2: {
+                    ...boundary, position: {
+                        x: boundary.position.x,
+                        y: boundary.position.y - 3
+                    }
+                }
             })) {
-                console.log("Collision")
                 moving = false
                 break
             }
         }
-        if(moving)
-        movables.forEach((movable) => {
-            movable.position.y -= 3
-        })
+        if (moving)
+            movables.forEach((movable) => {
+                movable.position.y -= 3
+            })
     }
     else if (keys.d.pressed && lastKey == 'd') {
         player.moving = true
-        player.image= player.sprites.rigth
-        for (let i = 0; i<boundaries.length;i++){
+        player.image = player.sprites.rigth
+        for (let i = 0; i < boundaries.length; i++) {
             const boundary = boundaries[i]
             if (rectangularCollision({
                 rectangle1: player,
-                rectangle2: {...boundary, position: {
-                    x: boundary.position.x - 3,
-                    y: boundary.position.y
-                }}
+                rectangle2: {
+                    ...boundary, position: {
+                        x: boundary.position.x - 3,
+                        y: boundary.position.y
+                    }
+                }
             })) {
-                console.log("Collision")
                 moving = false
                 break
             }
         }
-        if(moving)
-        movables.forEach((movable) => {
-            movable.position.x -= 3
-        })
+        if (moving)
+            movables.forEach((movable) => {
+                movable.position.x -= 3
+            })
     }
 }
 animate()

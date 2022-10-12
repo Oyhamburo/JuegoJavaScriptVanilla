@@ -1,6 +1,6 @@
 // Visualizacion del mapa y del personaje
 class Sprite {
-    constructor({ position, velocity, image, frames = { max: 1 }, sprites }) {
+    constructor({ position, image, frames = { max: 1 }, sprites }) {
         this.position = position
         this.image = image
         this.frames = {...frames, val: 0, elapsed: 0}
@@ -38,28 +38,32 @@ class Sprite {
 }
 // Perimetro Collisiones
 class Boundary {
-    static width = 64
-    static height = 64
+    static width = 64.2
+    static height = 63.8
     constructor({ position }) {
-        this.position = position
-        this.width = 64
-        this.height = 64
+        this.position = position 
+        this.width = 56
+        this.height = 56
     }
     draw() {
-        c.fillStyle = 'rgba(255,0,0,0.2)'
+        c.fillStyle = 'rgba(255,0,0,0)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
 class BoundaryDoor {
     static width = 64
     static height = 64
-    constructor({ position }) {
+    constructor({ position,symbol }) {
         this.position = position
         this.width = 64
         this.height = 64
+        this.symbol = symbol
     }
     draw() {
-        c.fillStyle = 'rgba(0,0,255,0.2)'
+        c.fillStyle = 'rgba(0,0,255,0)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
+    test(){
+        console.log(this.symbol)
     }
 }
