@@ -40,10 +40,11 @@ class Sprite {
 class Boundary {
     static width = 64.2
     static height = 63.8
-    constructor({ position }) {
+    constructor({ position,symbol }) {
         this.position = position 
         this.width = 56
         this.height = 56
+        this.symbol = symbol
     }
     draw() {
         c.fillStyle = 'rgba(255,0,0,0)'
@@ -60,7 +61,7 @@ class BoundaryDoor {
         this.symbol = symbol
     }
     draw() {
-        c.fillStyle = 'rgba(0,0,255,0)'
+        c.fillStyle = 'rgba(0,0,255,0.5)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
     test(){

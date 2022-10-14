@@ -1,73 +1,52 @@
-//Defino Mapa
+// Defino Mapa camino
 
-let imageCementery = new Image()
-imageCementery.src = './img/v.0.1/cemetery.png'
-let foregroundImageCementery = new Image()
-foregroundImageCementery.src = ''
+let imageRute = new Image()
+imageRute.src = ''
+let foregroundImageRute = new Image()
 
-const offsetBackCementery = {
-    x: 64,
-    y: -750
+const offsetBgRute = {
+    x: 2,
+    y: 2
 }
-// Mapeo de Salida del cementerio
-for (let i = 0; i < exitCementery.length; i += 30) {
-    exitCementeryMap.push(exitCementery.slice(i, 30 + i))
+
+// Mapeo de puertas de la ruta
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+
 }
+
 // Mapeo de colisiones
-const boundariesExitCementery = []
-const offsetExitCementery = {
-    x: 64,
-    y: -750
+const boundariesExitRute = []
+const offsetExitRute = {
+    x: 2,
+    y:
 }
-exitCementeryMap.forEach((row, i) => {
-    row.forEach((Symbol, j) => {
-        //numero que represente la colision
-        if (Symbol === 1753)
-            boundariesExitCementery.push(
-                new BoundaryDoor({
-                    position: {
-                        x: j * BoundaryDoor.width + offsetExitCementery.x,
-                        y: i * BoundaryDoor.height + offsetExitCementery.y
-                    }
 
+exitRuteMap.forEach((row,i) => {
+    row.forEach((Symbol,j)=>{
+        //numero que reprensete la colision del mapeo
+        if(Symbol === ????){
+            boundariesExitRute.push(
+                new Boundary({
+                    position:{
+                        x: j * Boundary.width + offsetExitRute.x,
+                        y: j * Boundary.width + offsetExitRute.y 
+                    }
                 })
             )
+        }
     })
 })
-const backgroundCementery = new Sprite({
-    position: {
-        x: offsetBackCementery.x,
-        y: offsetBackCementery.y
-    },
-    image: imageCementery
-})
-const foregroundCementey = new Sprite({
-    position: {
-        x: offsetBackCementery.x,
-        y: offsetBackCementery.y
-    },
-    image: foregroundImageCementery
-})
 
-// Agragar para permanecer un fondo statico
-const movablesCementery = [backgroundCementery, ...boundariesExitCementery, foregroundCementey]
 
-function rectangularCollisionExitCementery({ rectangle1, rectangle2 }) {
-    return (
-        rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
-        rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
-        rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
-        rectangle1.position.y + rectangle1.height >= rectangle2.position.y
-    )
-}
-function animateCementery() {
-    const animationIdCemtery = window.requestAnimationFrame(animateCementery)
-    backgroundCementery.draw()
+function animateRute() {
+    const animationIdRute = window.requestAnimationFrame(animateRute)
+    backgroundRute.draw()
 
-    boundariesExitCementery.forEach((boundary) => {
+    boundariesExitRute.forEach((boundary) => {
         boundary.draw()
 
-        if (rectangularCollisionExitCementery({
+        if (rectangularCollisionExitRute({
             rectangle1: player,
             rectangle2: boundary
         })) {
@@ -76,26 +55,29 @@ function animateCementery() {
     })
 
     player.draw()
-    foregroundCementey.draw()
+    foregroundRute.draw()
 
     //solo detecta en caso de que estes moviendote dentro de la zona
     //Se usa para pasto del pokemon
     if (keys.s.pressed) {
         // Colision con puertas
-        for (let i = 0; i < boundariesExitCementery.length; i++) {
-            const exit = boundariesExitCementery[i]
-            const overlappingAreaCementery = (Math.min(player.position.x + player.width, exit.position.x + exit.width)
+        for (let i = 0; i < boundariesExitRute.length; i++) {
+            const exit = boundariesExitRute[i]
+            const overlappingAreaRute = (Math.min(player.position.x + player.width, exit.position.x + exit.width)
                 - Math.max(player.position.x, exit.position.x))
                 * (Math.min(player.position.y + player.height, exit.position.y + exit.height)
                     - Math.max(player.position.y, exit.position.y))
 
-            if (rectangularCollisionExitCementery({
+            if (rectangularCollisionExitRute({
                 rectangle1: player,
                 rectangle2: exit
             }) &&
-                overlappingAreaCementery > (player.width * player.height) / 2
+                overlappingAreaRute > (player.width * player.height) / 2
             ) {
-                window.cancelAnimationFrame(animationIdCemtery)
+                //cancel animation id 
+                window.cancelAnimationFrame(animationIdRute)
+                // test()
+                console.log('saliste')
                 ingreso()
                 break
             }
@@ -126,8 +108,8 @@ function animateCementery() {
             }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.y += 3
+            movablesShop.forEach((movablesShop) => {
+                movablesShop.position.y += 3
             })
 
 
@@ -153,8 +135,8 @@ function animateCementery() {
             // }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.x += 3
+            movablesShop.forEach((movablesShop) => {
+                movablesShop.position.x += 3
             })
     }
     else if (keys.s.pressed && lastKey == 's') {
@@ -176,8 +158,8 @@ function animateCementery() {
             }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.y -= 3
+            movablesShop.forEach((movablesShop) => {
+                movablesShop.position.y -= 3
             })
     }
     else if (keys.d.pressed && lastKey == 'd') {
@@ -200,10 +182,8 @@ function animateCementery() {
             }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.x -= 3
+            movablesShop.forEach((movablesShop) => {
+                movablesShop.position.x -= 3
             })
     }
 }
-
-

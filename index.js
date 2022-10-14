@@ -11,6 +11,7 @@ canvas.height = 720
 const collisionsMap = []
 const doorMap = []
 const exitCementeryMap = []
+const PosionShopCollisionMap = []
 
 
 // Mapeo de colisiones
@@ -165,6 +166,7 @@ function rectangularCollisionDoor({ rectangle1, rectangle2 }) {
     )
 }
 function animate() {
+    console.log('andando')
     const animationId = window.requestAnimationFrame(animate)
     background.draw()
     //Solo dibujan
@@ -209,17 +211,19 @@ function animate() {
                 overlappingArea > (player.width * player.height) / 2
             ) {
                 // console.log(door.symbol)
-                window.cancelAnimationFrame(animationId)
                 switch (door.symbol) {
                     case 3333:
                         console.log('Bienvenido al Camino')
                         break;
                     case 2275:
                         console.log('Bienvenido al Cementery')
+                        window.cancelAnimationFrame(animationId)
                         test()
                         break;
                     case 4444:
+                        window.cancelAnimationFrame(animationId)
                         console.log('Bienvenido la Armeria')
+                        startAnimatePosionShop()
                         break;
                     case 5555:
                         console.log('Bienvenido a Posiones')
@@ -338,7 +342,7 @@ function animate() {
             })
     }
 }
-animate()
+// animate()
 
 let lastKey = ''
 window.addEventListener('keydown', (e) => {
