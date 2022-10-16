@@ -12,24 +12,23 @@ const offsetBgRute = {
 // Mapeo de puertas de la ruta
 for (let i = 0; i < array.length; i++) {
     const element = array[i];
-
 }
 
 // Mapeo de colisiones
 const boundariesExitRute = []
 const offsetExitRute = {
     x: 2,
-    y:
+    y: 6
 }
 
 exitRuteMap.forEach((row,i) => {
     row.forEach((Symbol,j)=>{
         //numero que reprensete la colision del mapeo
-        if(Symbol === ????){
+        if(Symbol === 2){
             boundariesExitRute.push(
                 new Boundary({
                     position:{
-                        x: j * Boundary.width + offsetExitRute.x,
+                        x: j * Boundary.width + offsetExitRute,
                         y: j * Boundary.width + offsetExitRute.y 
                     }
                 })

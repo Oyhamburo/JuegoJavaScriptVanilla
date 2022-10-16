@@ -28,3 +28,37 @@ body{
     0%   { opacity: 1;}
     100%  { opacity: 0 ; }
 }
+.dialog{
+    background-image: url('./img/DialogBoxFaceset.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 70%;
+    bottom: 3%;
+    right: 0;
+    display: none;
+}
+.dialog__faceset{
+    background-image: url('./img/mafiaCara.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    width: 126px;
+    height: 126px;
+    left: 157px;
+    bottom: 21px;
+}
+.dialog__chat{
+    border-radius: 1rem;
+    z-index: 1;
+    width: 782px;
+    height: 94px;
+    left: 306px;
+    bottom: 21px;
+    padding: 1rem;
+    position: absolute;
+    font-size: 1.4rem;
+}

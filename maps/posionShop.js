@@ -26,8 +26,16 @@ PosionShopCollisionMap.forEach((row, i) => {
         //1420 puerta
         //2 pared
         //1421 npc
+        // 23 npc vieja
+        // 45 npc perro
         // 1 objeto
-        if (Symbol === 1421 || Symbol === 1420 || Symbol === 2 || Symbol === 1)
+        // si el numero va de x a x es un npc si va de x a x es un obj y si va de x a x una puerta y si es x es una pared
+        // 45 pota {}
+        // 1 pared
+        // 201 a 300 puertas
+        // 101 a 100 objetos
+        // 301 a 400 npcs
+        if ((Symbol > 300 && Symbol <= 400) || (Symbol > 200 && Symbol <= 300) || (Symbol > 100 && Symbol <= 200) || Symbol === 1)
             boundariesExitPosionShop.push(
                 new BoundaryDoor({
                     position: {
@@ -35,7 +43,6 @@ PosionShopCollisionMap.forEach((row, i) => {
                         y: i * BoundaryDoor.height + offsetExitPosionShop.y
                     },
                     symbol: Symbol
-
                 })
             )
     })
@@ -56,68 +63,16 @@ const foregroundPosionShop = new Sprite({
 })
 // Agragar para permanecer un fondo statico
 const movablesPosionShop = [backgroundPosionShop, ...boundariesExitPosionShop, foregroundPosionShop]
-
-function rectangularCollisionExitPosionShop({ rectangle1, rectangle2 }) {
-    return (
-        rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
-        rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
-        rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
-        rectangle1.position.y + rectangle1.height >= rectangle2.position.y
-    )
-}
-
+let interaccion = false
+let idObjeto = ''
 function animatePosionShop() {
+    // console.log('run map posion shop')
     const animationIdPosionShop = window.requestAnimationFrame(animatePosionShop)
     backgroundPosionShop.draw()
-
-    boundariesExitPosionShop.forEach((boundary) => {
-        boundary.draw()
-
-        if (rectangularCollisionExitPosionShop({
-            rectangle1: player,
-            rectangle2: boundary
-        })) {
-            // console.log("collision")
-        }
-    })
-
     player.draw()
-    foregroundPosionShop.draw()
+
     let moving = true
     player.moving = false
-    //solo detecta en caso de que estes moviendote dentro de la zona
-    //Se usa para pasto del pokemon
-    // if (keys.s.pressed || keys.w.pressed || keys.a.pressed || keys.d.pressed) {
-    //     // Colision con puertas
-    //     for (let i = 0; i < boundariesExitPosionShop.length; i++) {
-    //         const exit = boundariesExitPosionShop[i]
-
-    //         if (rectangularCollisionExitCementery({
-    //             rectangle1: player,
-    //             rectangle2: exit
-    //         })
-    //         ) {
-    //             switch (exit.symbol) {
-    //                 case 2:
-    //                     console.log('pared')
-    //                     break;
-    //                 case 1420:
-    //                     console.log('puerta')
-    //                     break;
-    //                 case 1421:
-    //                     console.log('npc')
-    //                     break;
-    //                 case 1:
-    //                     console.log('objeto')
-    //                     break;
-    //                 default:
-    //                     break;
-    //             }
-    //             break
-    //         }
-    //     }
-    // }
-
     //KEYS Pressed
     if (keys.w.pressed && lastKey == 'w') {
         player.moving = true
@@ -125,7 +80,7 @@ function animatePosionShop() {
         // Colision con el perimetro del mapa
         for (let i = 0; i < boundariesExitPosionShop.length; i++) {
             const boundary = boundariesExitPosionShop[i]
-            if (rectangularCollisionExitPosionShop({
+            if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
@@ -134,22 +89,20 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                switch (boundary.symbol) {
-                    case 2:
-                        console.log('pared')
-                        break;
-                    case 1420:
-                        console.log('puerta')
-                        window.cancelAnimationFrame(animationIdPosionShop)
-                        break;
-                    case 1421:
-                        console.log('npc')
-                        break;
-                    case 1:
-                        console.log('objeto')
-                        break;
-                    default:
-                        break;
+                idObjeto= boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                    window.cancelAnimationFrame(animationIdPosionShop)
+                    startAnimation('inicio')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
                 }
                 moving = false
                 break
@@ -159,16 +112,13 @@ function animatePosionShop() {
             movablesPosionShop.forEach((movablesPosionShop) => {
                 movablesPosionShop.position.y += 3
             })
-
-
-
     }
     else if (keys.a.pressed && lastKey == 'a') {
         player.moving = true
         player.image = player.sprites.left
         for (let i = 0; i < boundariesExitPosionShop.length; i++) {
             const boundary = boundariesExitPosionShop[i]
-            if (rectangularCollisionExitPosionShop({
+            if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
@@ -177,22 +127,21 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                switch (boundary.symbol) {
-                    case 2:
-                        console.log('pared')
-                        break;
-                    case 1420:
-                        console.log('puerta')
-                        window.cancelAnimationFrame(animationIdPosionShop)
-                        break;
-                    case 1421:
-                        console.log('npc')
-                        break;
-                    case 1:
-                        console.log('objeto')
-                        break;
-                    default:
-                        break;
+                idObjeto= boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                    window.cancelAnimationFrame(animationIdPosionShop)
+                    startAnimation('inicio')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
                 }
                 moving = false
                 break
@@ -208,7 +157,7 @@ function animatePosionShop() {
         player.image = player.sprites.down
         for (let i = 0; i < boundariesExitPosionShop.length; i++) {
             const boundary = boundariesExitPosionShop[i]
-            if (rectangularCollisionExitPosionShop({
+            if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
@@ -217,25 +166,24 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                switch (boundary.symbol) {
-                    case 2:
-                        console.log('pared')
-                        break;
-                    case 1420:
-                        console.log('puerta')
-                        window.cancelAnimationFrame(animationIdPosionShop)
-                        startAnimate()
-                        break;
-                    case 1421:
-                        console.log('npc')
-                        break;
-                    case 1:
-                        console.log('objeto')
-                        testIntereaccion()
-                        break;
-                    default:
-                        break;
+                idObjeto= boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                    window.cancelAnimationFrame(animationIdPosionShop)
+                    startAnimation('inicio')
                 }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
+
+
                 moving = false
                 break
             }
@@ -250,7 +198,7 @@ function animatePosionShop() {
         player.image = player.sprites.rigth
         for (let i = 0; i < boundariesExitPosionShop.length; i++) {
             const boundary = boundariesExitPosionShop[i]
-            if (rectangularCollisionExitPosionShop({
+            if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
@@ -259,28 +207,21 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                switch (boundary.symbol) {
-                    case 2:
-                        console.log('pared')
-                        break;
-                    case 1420:
-                        console.log('puerta')
-                        window.cancelAnimationFrame(animationIdPosionShop)
-                        startAnimate()
-                        break;
-                    case 1421:
-                        console.log('npc')
-                        break;
-                    case 1:
-                        console.log('objeto')
-                        window.addEventListener('keyup', (e) => {
-                            if(e.keyCode == 32){
-                                console.log('encontraste un obejto')
-                            }
-                        })
-                        break;
-                    default:
-                        break;
+                idObjeto= boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                    window.cancelAnimationFrame(animationIdPosionShop)
+                    startAnimation('inicio')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
                 }
                 moving = false
                 break
@@ -291,20 +232,19 @@ function animatePosionShop() {
                 movablePosionShop.position.x -= 3
             })
     }
-}
 
-function testIntereaccion() {
-    if(keys.d.pressed){
-        console.log('esta vivo')
+    if (keys.e.pressed && interaccion) {
+        console.log(idObjeto)
+        interactuar(idObjeto)
+    }
+    if ((keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) && closeDialog) {
+        Rinteractuar()
+        interaccion = false
+        closeDialog = false
     }
 }
 
 
-function startAnimatePosionShop() {
-    animatePosionShop()
-}
-function startAnimate() {
-    console.log('ejecuta funcion')
-    animate()
-}
+
+
 animatePosionShop()

@@ -47,17 +47,17 @@ class Boundary {
         this.symbol = symbol
     }
     draw() {
-        c.fillStyle = 'rgba(255,0,0,0)'
+        c.fillStyle = 'rgba(255,0,0,0.5)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
 class BoundaryDoor {
-    static width = 64
-    static height = 64
+    static width = 64.4
+    static height = 63.8
     constructor({ position,symbol }) {
         this.position = position
-        this.width = 64
-        this.height = 64
+        this.width = 56
+        this.height = 56
         this.symbol = symbol
     }
     draw() {

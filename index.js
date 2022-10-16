@@ -23,7 +23,6 @@ for (let i = 0; i < doors.length; i += 50) {
     doorMap.push(doors.slice(i, 50 + i))
 }
 
-
 // Mapeo de colisiones
 const boundaries = []
 const offset = {
@@ -128,20 +127,7 @@ const foreground = new Sprite({
     image: foregroundImage
 })
 
-const keys = {
-    w: {
-        pressed: false
-    },
-    s: {
-        pressed: false
-    },
-    a: {
-        pressed: false
-    },
-    d: {
-        pressed: false
-    }
-}
+
 
 // Agragar para permanecer un fondo statico
 const movables = [background, ...boundaries, ...boundariesDoors, foreground]
@@ -166,30 +152,30 @@ function rectangularCollisionDoor({ rectangle1, rectangle2 }) {
     )
 }
 function animate() {
-    console.log('andando')
     const animationId = window.requestAnimationFrame(animate)
     background.draw()
+    // console.log('deBug')
     //Solo dibujan
-    boundaries.forEach((boundary) => {
-        boundary.draw()
+    // boundaries.forEach((boundary) => {
+    //     boundary.draw()
 
-        if (rectangularCollision({
-            rectangle1: player,
-            rectangle2: boundary
-        })) {
-            // console.log("CollisionBoundary")
-        }
-    })
-    boundariesDoors.forEach((boundary) => {
-        boundary.draw()
+    //     if (rectangularCollision({
+    //         rectangle1: player,
+    //         rectangle2: boundary
+    //     })) {
+    //         // console.log("CollisionBoundary")
+    //     }
+    // })
+    // boundariesDoors.forEach((boundary) => {
+    //     boundary.draw()
 
-        if (rectangularCollisionDoor({
-            rectangle1: player,
-            rectangle2: boundary
-        })) {
-            // console.log("CollisionDoors")
-        }
-    })
+    //     if (rectangularCollisionDoor({
+    //         rectangle1: player,
+    //         rectangle2: boundary
+    //     })) {
+    //         // console.log("CollisionDoors")
+    //     }
+    // })
     player.draw()
     foreground.draw()
 
@@ -223,7 +209,7 @@ function animate() {
                     case 4444:
                         window.cancelAnimationFrame(animationId)
                         console.log('Bienvenido la Armeria')
-                        startAnimatePosionShop()
+                        startAnimation('posionShop')
                         break;
                     case 5555:
                         console.log('Bienvenido a Posiones')
@@ -239,7 +225,6 @@ function animate() {
             }
         }
     }
-
     let moving = true
     player.moving = false
     //KEYS Pressed
@@ -341,23 +326,7 @@ function animate() {
                 movable.position.x -= 3
             })
     }
+
 }
 // animate()
 
-let lastKey = ''
-window.addEventListener('keydown', (e) => {
-    switch (e.key) {
-        case 'w': keys.w.pressed = true; lastKey = 'w'; break
-        case 's': keys.s.pressed = true; lastKey = 's'; break
-        case 'a': keys.a.pressed = true; lastKey = 'a'; break
-        case 'd': keys.d.pressed = true; lastKey = 'd'; break
-    }
-})
-window.addEventListener('keyup', (e) => {
-    switch (e.key) {
-        case 'w': keys.w.pressed = false; break
-        case 's': keys.s.pressed = false; break
-        case 'a': keys.a.pressed = false; break
-        case 'd': keys.d.pressed = false; break
-    }
-})
