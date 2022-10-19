@@ -32,7 +32,7 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 105,
-                thumbnail: './img/lifePot.png',
+                thumbnail: './img/botiquin.png',
             },
             {
                 name: 'botella de agua',
@@ -40,7 +40,7 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 106,
-                thumbnail: './img/lifePot.png',
+                thumbnail: './img/frascoAgua.png',
             },
             {
                 name: 'botellla vacia',
@@ -48,7 +48,7 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 107,
-                thumbnail: './img/lifePot.png',
+                thumbnail: './img/frascoVacio.png',
             }
         ],
         strength: [

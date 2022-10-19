@@ -10,7 +10,7 @@ canvas.height = 720
 //Perimiteros y puertas
 const collisionsMap = []
 const doorMap = []
-const exitCementeryMap = []
+const CementeryMap = []
 const PosionShopCollisionMap = []
 
 
@@ -38,7 +38,8 @@ collisionsMap.forEach((row, i) => {
                     position: {
                         x: j * Boundary.width + offset.x,
                         y: i * Boundary.height + offset.y
-                    }
+                    },
+                    symbol: Symbol
                 })
             )
     })
@@ -156,26 +157,26 @@ function animate() {
     background.draw()
     // console.log('deBug')
     //Solo dibujan
-    // boundaries.forEach((boundary) => {
-    //     boundary.draw()
+    boundaries.forEach((boundary) => {
+        boundary.draw()
 
-    //     if (rectangularCollision({
-    //         rectangle1: player,
-    //         rectangle2: boundary
-    //     })) {
-    //         // console.log("CollisionBoundary")
-    //     }
-    // })
-    // boundariesDoors.forEach((boundary) => {
-    //     boundary.draw()
+        if (rectangularCollision({
+            rectangle1: player,
+            rectangle2: boundary
+        })) {
+            // console.log("CollisionBoundary")
+        }
+    })
+    boundariesDoors.forEach((boundary) => {
+        boundary.draw()
 
-    //     if (rectangularCollisionDoor({
-    //         rectangle1: player,
-    //         rectangle2: boundary
-    //     })) {
-    //         // console.log("CollisionDoors")
-    //     }
-    // })
+        if (rectangularCollisionDoor({
+            rectangle1: player,
+            rectangle2: boundary
+        })) {
+            // console.log("CollisionDoors")
+        }
+    })
     player.draw()
     foreground.draw()
 
@@ -204,7 +205,7 @@ function animate() {
                     case 2275:
                         console.log('Bienvenido al Cementery')
                         window.cancelAnimationFrame(animationId)
-                        test()
+                        startAnimation('cementery')
                         break;
                     case 4444:
                         window.cancelAnimationFrame(animationId)
@@ -243,7 +244,10 @@ function animate() {
                     }
                 }
             })) {
-                // console.log("Collision")
+                // if(boundary.symbol == 2275){
+                //     window.cancelAnimationFrame(animationId)
+                //     startAnimation('cementery')
+                // }
                 moving = false
                 break
             }
@@ -328,5 +332,5 @@ function animate() {
     }
 
 }
-// animate()
+animate()
 

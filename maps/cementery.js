@@ -3,71 +3,67 @@
 let imageCementery = new Image()
 imageCementery.src = './img/v.0.1/cemetery.png'
 let foregroundImageCementery = new Image()
-foregroundImageCementery.src = ''
+foregroundImageCementery.src = './img/v.0.1/cementeryForeGround.png'
 
-const offsetBackCementery = {
-    x: 64,
-    y: -750
+const offsetCementery = {
+    x: - 770,
+    y: -1250
 }
 // Mapeo de Salida del cementerio
-for (let i = 0; i < exitCementery.length; i += 30) {
-    exitCementeryMap.push(exitCementery.slice(i, 30 + i))
+
+for (let i = 0; i < collisionCementery.length; i += 45) {
+    CementeryMap.push(collisionCementery.slice(i, 45 + i))
 }
+
 // Mapeo de colisiones
-const boundariesExitCementery = []
-const offsetExitCementery = {
-    x: 64,
-    y: -750
-}
-exitCementeryMap.forEach((row, i) => {
+const boundariesCementery = []
+
+CementeryMap.forEach((row, i) => {
     row.forEach((Symbol, j) => {
         //numero que represente la colision
-        if (Symbol === 1753)
-            boundariesExitCementery.push(
+        // 1 pared
+        // 201 a 300 puertas
+        // 101 a 100 objetos
+        // 301 a 400 npcs
+        if ((Symbol > 300 && Symbol <= 400) || (Symbol > 200 && Symbol <= 300) || (Symbol > 100 && Symbol <= 200) || Symbol === 1)
+            boundariesCementery.push(
                 new BoundaryDoor({
                     position: {
-                        x: j * BoundaryDoor.width + offsetExitCementery.x,
-                        y: i * BoundaryDoor.height + offsetExitCementery.y
-                    }
-
+                        x: j * BoundaryDoor.width + offsetCementery.x,
+                        y: i * BoundaryDoor.height + offsetCementery.y
+                    },
+                    symbol: Symbol
                 })
             )
     })
 })
 const backgroundCementery = new Sprite({
     position: {
-        x: offsetBackCementery.x,
-        y: offsetBackCementery.y
+        x: offsetCementery.x,
+        y: offsetCementery.y
     },
     image: imageCementery
 })
 const foregroundCementey = new Sprite({
     position: {
-        x: offsetBackCementery.x,
-        y: offsetBackCementery.y
+        x: offsetCementery.x,
+        y: offsetCementery.y
     },
     image: foregroundImageCementery
 })
 
 // Agragar para permanecer un fondo statico
-const movablesCementery = [backgroundCementery, ...boundariesExitCementery, foregroundCementey]
+const movablesCementery = [backgroundCementery,...boundariesCementery, foregroundCementey]
 
-function rectangularCollisionExitCementery({ rectangle1, rectangle2 }) {
-    return (
-        rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
-        rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
-        rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
-        rectangle1.position.y + rectangle1.height >= rectangle2.position.y
-    )
-}
 function animateCementery() {
+    console.log('cementery')
     const animationIdCemtery = window.requestAnimationFrame(animateCementery)
     backgroundCementery.draw()
 
-    boundariesExitCementery.forEach((boundary) => {
+    boundariesCementery.forEach((boundary) => {
         boundary.draw()
 
-        if (rectangularCollisionExitCementery({
+        if (rectangularCollision({
             rectangle1: player,
             rectangle2: boundary
         })) {
@@ -78,29 +74,6 @@ function animateCementery() {
     player.draw()
     foregroundCementey.draw()
 
-    //solo detecta en caso de que estes moviendote dentro de la zona
-    //Se usa para pasto del pokemon
-    if (keys.s.pressed) {
-        // Colision con puertas
-        for (let i = 0; i < boundariesExitCementery.length; i++) {
-            const exit = boundariesExitCementery[i]
-            const overlappingAreaCementery = (Math.min(player.position.x + player.width, exit.position.x + exit.width)
-                - Math.max(player.position.x, exit.position.x))
-                * (Math.min(player.position.y + player.height, exit.position.y + exit.height)
-                    - Math.max(player.position.y, exit.position.y))
-
-            if (rectangularCollisionExitCementery({
-                rectangle1: player,
-                rectangle2: exit
-            }) &&
-                overlappingAreaCementery > (player.width * player.height) / 2
-            ) {
-                window.cancelAnimationFrame(animationIdCemtery)
-                ingreso()
-                break
-            }
-        }
-    }
     let moving = false
     player.moving = false
     //KEYS Pressed
@@ -108,9 +81,9 @@ function animateCementery() {
     if (keys.w.pressed && lastKey == 'w') {
         player.moving = true
         player.image = player.sprites.up
-        //Colision con el perimetro del mapa
-        for (let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
+        // Colision con el perimetro del mapa
+        for (let i = 0; i < boundariesCementery.length; i++) {
+            const boundary = boundariesCementery[i]
             if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
@@ -120,48 +93,72 @@ function animateCementery() {
                     }
                 }
             })) {
-                // console.log("Collision")
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                    interaccion = true
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
                 moving = false
                 break
             }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.y += 3
+            movablesCementery.forEach((movablesCementery) => {
+                movablesCementery.position.y += 3
             })
-
-
-
     }
     else if (keys.a.pressed && lastKey == 'a') {
         player.moving = true
         player.image = player.sprites.left
-        for (let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
-            // if (rectangularCollision({
-            //     rectangle1: player,
-            //     rectangle2: {
-            //         ...boundary, position: {
-            //             x: boundary.position.x + 3,
-            //             y: boundary.position.y
-            //         }
-            //     }
-            // })) {
-            //     console.log("Collision")
-            //     moving = false
-            //     break
-            // }
+        for (let i = 0; i < boundariesCementery.length; i++) {
+            const boundary = boundariesCementery[i]
+            if (rectangularCollision({
+                rectangle1: player,
+                rectangle2: {
+                    ...boundary, position: {
+                        x: boundary.position.x + 3,
+                        y: boundary.position.y
+                    }
+                }
+            })) {
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
+                moving = false
+                break
+            }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.x += 3
+            movablesCementery.forEach((movableCementery) => {
+                movableCementery.position.x += 3
             })
     }
     else if (keys.s.pressed && lastKey == 's') {
         player.moving = true
         player.image = player.sprites.down
-        for (let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
+        for (let i = 0; i < boundariesCementery.length; i++) {
+            const boundary = boundariesCementery[i]
             if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
@@ -171,20 +168,38 @@ function animateCementery() {
                     }
                 }
             })) {
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    startAnimation('inicio')
+                    window.cancelAnimationFrame(animationIdCemtery)
+                    console.log('puerta')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
+
+
                 moving = false
                 break
             }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.y -= 3
+            movablesCementery.forEach((movableCementery) => {
+                movableCementery.position.y -= 3
             })
     }
     else if (keys.d.pressed && lastKey == 'd') {
         player.moving = true
         player.image = player.sprites.rigth
-        for (let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
+        for (let i = 0; i < boundariesCementery.length; i++) {
+            const boundary = boundariesCementery[i]
             if (rectangularCollision({
                 rectangle1: player,
                 rectangle2: {
@@ -194,16 +209,29 @@ function animateCementery() {
                     }
                 }
             })) {
-                console.log("Collision")
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    console.log('puerta')
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
                 moving = false
                 break
             }
         }
         if (moving)
-            movablesCementery.forEach((movable) => {
-                movable.position.x -= 3
+            movablesCementery.forEach((movableCementery) => {
+                movableCementery.position.x -= 3
             })
     }
 }
 
-
+// animateCementery()

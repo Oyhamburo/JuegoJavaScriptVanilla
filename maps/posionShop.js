@@ -64,7 +64,7 @@ const foregroundPosionShop = new Sprite({
 // Agragar para permanecer un fondo statico
 const movablesPosionShop = [backgroundPosionShop, ...boundariesExitPosionShop, foregroundPosionShop]
 let interaccion = false
-let idObjeto = ''
+let idColl = ''
 function animatePosionShop() {
     // console.log('run map posion shop')
     const animationIdPosionShop = window.requestAnimationFrame(animatePosionShop)
@@ -89,14 +89,14 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                idObjeto= boundary.symbol
+                idColl = boundary.symbol
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     console.log('puerta')
                     window.cancelAnimationFrame(animationIdPosionShop)
                     startAnimation('inicio')
                 }
                 if (boundary.symbol > 300 && boundary.symbol <= 400) {
-                    console.log('npc')
+                    interaccion = true
                 }
                 if (boundary.symbol > 100 && boundary.symbol <= 200) {
                     interaccion = true
@@ -127,7 +127,7 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                idObjeto= boundary.symbol
+                idColl = boundary.symbol
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     console.log('puerta')
                     window.cancelAnimationFrame(animationIdPosionShop)
@@ -166,7 +166,7 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                idObjeto= boundary.symbol
+                idColl = boundary.symbol
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     console.log('puerta')
                     window.cancelAnimationFrame(animationIdPosionShop)
@@ -207,7 +207,7 @@ function animatePosionShop() {
                     }
                 }
             })) {
-                idObjeto= boundary.symbol
+                idColl = boundary.symbol
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     console.log('puerta')
                     window.cancelAnimationFrame(animationIdPosionShop)
@@ -234,8 +234,7 @@ function animatePosionShop() {
     }
 
     if (keys.e.pressed && interaccion) {
-        console.log(idObjeto)
-        interactuar(idObjeto)
+        interactuar(idColl)
     }
     if ((keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) && closeDialog) {
         Rinteractuar()
@@ -246,5 +245,3 @@ function animatePosionShop() {
 
 
 
-
-animatePosionShop()
