@@ -14,6 +14,9 @@ const keys = {
     },
     e: {
         pressed: false
+    },
+    space: {
+        pressed: false
     }
 }
 
@@ -25,6 +28,7 @@ window.addEventListener('keydown', (e) => {
         case 'a': keys.a.pressed = true; lastKey = 'a'; break
         case 'd': keys.d.pressed = true; lastKey = 'd'; break
         case 'e': keys.e.pressed = true; lastKey = 'e'; break
+        // case ' ': keys.space.pressed = true; lastKey = ' '; break
     }
 })
 window.addEventListener('keyup', (e) => {
@@ -34,5 +38,11 @@ window.addEventListener('keyup', (e) => {
         case 'a': keys.a.pressed = false; break
         case 'd': keys.d.pressed = false; break
         case 'e': keys.e.pressed = false; break
+        case ' ': espacio = true; break
+        case 'i': activeInventory(); break
     }
 })
+
+function activeInventory(){
+    console.log('inventory')
+}

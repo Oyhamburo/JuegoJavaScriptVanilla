@@ -1,4 +1,5 @@
 // agreagar dialog desde la clase cuando interactuo con un objeto
+let interaccion = false
 let closeDialog = false
 function interactuar(objeto){
     if(objeto != ''){
@@ -14,17 +15,22 @@ function interactuar(objeto){
             screenChat.textContent = item.descript
             screenDialog.style.display = 'block'
             closeDialog = true
-        }if(objeto > 300 && objeto <= 400){//Es un npc            
+
+        }if(objeto > 300 && objeto <= 400){//Es un npc
+            npc = npcs.find(e=> e.id == objeto)
             screenDialogFaceset.style.backgroundImage = `url(${npc.thumbnail})`
             screenChat.textContent = npc.descript
             screenDialog.style.display = 'block'
             closeDialog = true
+            if(keys.e.pressed && interaccion){
+                console.log('hola')
+            }
         }
     }else{
         console.log('error no existe el id el objeto al que quiere acceder')
     }
 }
-function Rinteractuar(){
+function resetInteractuar(){
     const screenDialog = document.querySelector('#dialog')
     screenDialog.style.display = 'none'
 }

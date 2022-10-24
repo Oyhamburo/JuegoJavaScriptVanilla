@@ -3,13 +3,17 @@ function startAnimation(option) {
         case 'inicio':
             animate()
             break;
-        case 'cementery':
+        case 232:
             animateCementery()
             break;
-        case 'posionShop':
+        case 231:
             animatePosionShop()
             break;
-        case 'rute':
+        case 230:
+            console.log('entro')
+            animateArmory()
+            break;
+        case 233:
             // animateRute()
             break;
         default:

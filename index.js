@@ -4,35 +4,27 @@ const screen = document.querySelector('#transitionDoor')
 canvas.width = 1280
 canvas.height = 720
 
-
-
-
 //Perimiteros y puertas
 const collisionsMap = []
 const doorMap = []
 const CementeryMap = []
 const PosionShopCollisionMap = []
-
+const armoryCollisionMap = []
 
 // Mapeo de colisiones
-for (let i = 0; i < collisions.length; i += 50) {
-    collisionsMap.push(collisions.slice(i, 50 + i))
+for (let i = 0; i < collisions.length; i += 41) {
+    collisionsMap.push(collisions.slice(i, 41 + i))
 }
-// Mapeo de puertas
-for (let i = 0; i < doors.length; i += 50) {
-    doorMap.push(doors.slice(i, 50 + i))
-}
-
 // Mapeo de colisiones
 const boundaries = []
 const offset = {
-    x: -1400,
-    y: -1000
+    x: -200,
+    y: -850
 }
 collisionsMap.forEach((row, i) => {
     row.forEach((Symbol, j) => {
         //numero que represente la colision
-        if (Symbol === 2274)
+        if ((Symbol > 300 && Symbol <= 400) || (Symbol > 200 && Symbol <= 300) || (Symbol > 100 && Symbol <= 200) || Symbol === 1)
             boundaries.push(
                 new Boundary({
                     position: {
@@ -47,8 +39,8 @@ collisionsMap.forEach((row, i) => {
 // Mapeo de puertas Inicio
 const boundariesDoors = []
 const offsetDoor = {
-    x: -1400,
-    y: -1000
+    x: -1000,
+    y: -850
 }
 doorMap.forEach((row, i) => {
     row.forEach((Symbol, j) => {
@@ -70,7 +62,7 @@ doorMap.forEach((row, i) => {
 
 //Defino Mapa
 let image = new Image()
-image.src = './img/v.0.1/MapaV.0.2.png'
+image.src = './img/v.0.1/MapaV.0.3.png'
 let foregroundImage = new Image()
 foregroundImage.src = './img/v.0.1/mapForeground.png'
 //Defino Image del player
@@ -131,7 +123,7 @@ const foreground = new Sprite({
 
 
 // Agragar para permanecer un fondo statico
-const movables = [background, ...boundaries, ...boundariesDoors, foreground]
+const movables = [background, ...boundaries, foreground]
 
 
 //Funcion que permite detectar un cubo por los cuatro lados | devuelve true o false para detener movimiento del player
@@ -144,19 +136,9 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
     )
 }
 
-function rectangularCollisionDoor({ rectangle1, rectangle2 }) {
-    return (
-        rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
-        rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
-        rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
-        rectangle1.position.y + rectangle1.height >= rectangle2.position.y
-    )
-}
 function animate() {
     const animationId = window.requestAnimationFrame(animate)
     background.draw()
-    // console.log('deBug')
-    //Solo dibujan
     boundaries.forEach((boundary) => {
         boundary.draw()
 
@@ -167,65 +149,9 @@ function animate() {
             // console.log("CollisionBoundary")
         }
     })
-    boundariesDoors.forEach((boundary) => {
-        boundary.draw()
-
-        if (rectangularCollisionDoor({
-            rectangle1: player,
-            rectangle2: boundary
-        })) {
-            // console.log("CollisionDoors")
-        }
-    })
     player.draw()
     foreground.draw()
 
-    //solo detecta en caso de que estes moviendote dentro de la zona
-    //Se usa para pasto del pokemon
-    if (keys.w.pressed) {
-        // Colision con puertas
-        for (let i = 0; i < boundariesDoors.length; i++) {
-            const door = boundariesDoors[i]
-            const overlappingArea = (Math.min(player.position.x + player.width, door.position.x + door.width)
-                - Math.max(player.position.x, door.position.x))
-                * (Math.min(player.position.y + player.height, door.position.y + door.height)
-                    - Math.max(player.position.y, door.position.y))
-
-            if (rectangularCollisionDoor({
-                rectangle1: player,
-                rectangle2: door
-            }) &&
-                overlappingArea > (player.width * player.height) / 2
-            ) {
-                // console.log(door.symbol)
-                switch (door.symbol) {
-                    case 3333:
-                        console.log('Bienvenido al Camino')
-                        break;
-                    case 2275:
-                        console.log('Bienvenido al Cementery')
-                        window.cancelAnimationFrame(animationId)
-                        startAnimation('cementery')
-                        break;
-                    case 4444:
-                        window.cancelAnimationFrame(animationId)
-                        console.log('Bienvenido la Armeria')
-                        startAnimation('posionShop')
-                        break;
-                    case 5555:
-                        console.log('Bienvenido a Posiones')
-                        break;
-                    case 6666:
-                        console.log('Bienvenido al Astillero')
-                        break;
-                    default:
-                        break;
-                }
-
-                // break
-            }
-        }
-    }
     let moving = true
     player.moving = false
     //KEYS Pressed
@@ -244,10 +170,22 @@ function animate() {
                     }
                 }
             })) {
-                // if(boundary.symbol == 2275){
-                //     window.cancelAnimationFrame(animationId)
-                //     startAnimation('cementery')
-                // }
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    cancelAnimationFrame(animationId)
+                    startAnimation(boundary.symbol)
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                    interaccion = true
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
                 moving = false
                 break
             }
@@ -274,7 +212,22 @@ function animate() {
                     }
                 }
             })) {
-                // console.log("Collision")
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    cancelAnimationFrame(animationId)
+                    startAnimation(boundary.symbol)
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                    interaccion = true
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
                 moving = false
                 break
             }
@@ -298,6 +251,22 @@ function animate() {
                     }
                 }
             })) {
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    cancelAnimationFrame(animationId)
+                    startAnimation(boundary.symbol)
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                    interaccion = true
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
                 moving = false
                 break
             }
@@ -321,6 +290,22 @@ function animate() {
                     }
                 }
             })) {
+                idColl = boundary.symbol
+                if (boundary.symbol > 200 && boundary.symbol <= 300) {
+                    cancelAnimationFrame(animationId)
+                    startAnimation(boundary.symbol)
+                }
+                if (boundary.symbol > 300 && boundary.symbol <= 400) {
+                    console.log('npc')
+                    interaccion = true
+                }
+                if (boundary.symbol > 100 && boundary.symbol <= 200) {
+                    console.log('objeto')
+                    interaccion = true
+                }
+                if (boundary.symbol == 1) {
+                    console.log('pared')
+                }
                 moving = false
                 break
             }
@@ -330,7 +315,14 @@ function animate() {
                 movable.position.x -= 3
             })
     }
-
+    if (keys.e.pressed && interaccion) {
+        interactuar(idColl)
+    }
+    if ((keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) && closeDialog) {
+        resetInteractuar()
+        interaccion = false
+        closeDialog = false
+    }
 }
 animate()
 
