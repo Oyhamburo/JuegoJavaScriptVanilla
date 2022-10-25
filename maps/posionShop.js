@@ -235,10 +235,9 @@ function animatePosionShop() {
     if (keys.e.pressed && interaccion) {
         interactuar(idColl)
     }
-    // espacio ? window.cancelAnimationFrame(animationIdPosionShop) : '' 
     if(espacio){
         window.cancelAnimationFrame(animationIdPosionShop)
-        testUno()
+        openMarket()
     }
     if ((keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) && closeDialog) {
         resetInteractuar()
@@ -247,10 +246,6 @@ function animatePosionShop() {
     }
 }
 
-function testUno(){
-    alert('entramos al ecomerse de posiones')
-    espacio= false
-}
 
 
 

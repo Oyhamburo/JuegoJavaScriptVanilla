@@ -24,7 +24,7 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 104,
-                thumbnail: './img/lifePot.png',
+                thumbnail: 'LifePot.png'
             },
             {
                 name: 'Botiquin',
@@ -32,7 +32,7 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 105,
-                thumbnail: './img/botiquin.png',
+                thumbnail: 'Medipack.png',
             },
             {
                 name: 'botella de agua',
@@ -40,7 +40,7 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 106,
-                thumbnail: './img/frascoAgua.png',
+                thumbnail: 'WaterPot.png',
             },
             {
                 name: 'botellla vacia',
@@ -48,7 +48,23 @@ let items = {
                 price: 999,
                 power: 999,
                 id: 107,
-                thumbnail: './img/frascoVacio.png',
+                thumbnail: 'EmptyPot.png',
+            },
+            {
+                name: 'botellla de Leche',
+                descript: 'botellla de Leche',
+                price: 999,
+                power: 999,
+                id: 108,
+                thumbnail: 'MilkPot.png'
+            },
+            {
+                name: 'Corazon',
+                descript: 'Corazon',
+                price: 999,
+                power: 999,
+                id: 109,
+                thumbnail: 'Hear.png'
             }
         ],
         strength: [
