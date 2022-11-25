@@ -1,3 +1,3 @@
-const jere = 'jeremias Aitor'
+const jere = 'jeremias'
 
 export default jere
