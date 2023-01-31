@@ -1,11 +1,11 @@
 import { Sprite } from '../../class/index.js'
 import { offset } from "../offset/index.js"
-import { urlMaps } from "../../utils/index.js"
+import { URLMAPS } from "../../utils/index.js"
 
 
 const createForeground = (map) => { //mapStart
     let foregroundImage = new Image()
-    foregroundImage.src = `${urlMaps}${map}.png`
+    foregroundImage.src = `${URLMAPS}${map}.png`
     const foreground = new Sprite({
         position: {
             x: offset.x,

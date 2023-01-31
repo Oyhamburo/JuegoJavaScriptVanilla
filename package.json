@@ -1,10 +1,27 @@
 {
   "main": "./src/server.js",
   "type": "module",
+  "scripts": {
+    "build-sass": "node-sass --include-path scss public/sass/index.scss public/css/index.css",
+    "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
+    "start": "node src/server.js"
+  },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "minimist": "^1.2.7",
     "mongoose": "^6.7.5",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "socket.io": "^4.5.4"
   }
 }

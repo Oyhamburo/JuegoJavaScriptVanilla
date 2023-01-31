@@ -76,7 +76,7 @@ let animate = () => {
                     }
                 }
             })) {
-                console.log(boundary.symbol)
+                // console.log(boundary.symbol)
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     window.cancelAnimationFrame(animationId)
                     changeAnimation(boundary.symbol)
@@ -108,7 +108,7 @@ let animate = () => {
                     }
                 }
             })) {
-                console.log(boundary.symbol)
+                // console.log(boundary.symbol)
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     window.cancelAnimationFrame(animationId)
                     changeAnimation(boundary.symbol)
@@ -140,7 +140,7 @@ let animate = () => {
                     }
                 }
             })) {
-                console.log(boundary.symbol)
+                // console.log(boundary.symbol)
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     window.cancelAnimationFrame(animationId)
                     changeAnimation(boundary.symbol)

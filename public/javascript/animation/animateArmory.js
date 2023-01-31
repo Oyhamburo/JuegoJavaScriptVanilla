@@ -19,7 +19,7 @@ let animate = () => {
     backgroundArmory.draw()
     player.draw()
     foregroundArmory.draw()
-    console.log('armory')
+    // console.log('armory')
     let moving = true
     player.moving = false
     if (stateEcommerce)
@@ -69,7 +69,7 @@ let animate = () => {
                     }
                 }
             })) {
-                console.log(boundary.symbol)
+                // console.log(boundary.symbol)
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     window.cancelAnimationFrame(animationId)
                     changeAnimation(boundary.symbol)
@@ -132,7 +132,7 @@ let animate = () => {
                     }
                 }
             })) {
-                console.log(boundary.symbol)
+                // console.log(boundary.symbol)
                 if (boundary.symbol > 200 && boundary.symbol <= 300) {
                     window.cancelAnimationFrame(animationId)
                     changeAnimation(boundary.symbol)

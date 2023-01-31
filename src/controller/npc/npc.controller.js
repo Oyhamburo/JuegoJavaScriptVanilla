@@ -19,6 +19,14 @@ npcController.addNew = async (req, res, next) => {
         next(error);
     }
 };
+npcController.oka = async (req, res, next) => {
+    try {
+        console.log('POST OKA')
+        console.log(req.body)
+    } catch (error) {
+        next(error);
+    }
+};
 npcController.getById = async (req, res, next) => {
     const { id } = req.params
     try {

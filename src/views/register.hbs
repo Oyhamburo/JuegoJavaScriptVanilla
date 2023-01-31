@@ -1,0 +1,26 @@
+<div class="register">
+  <section class="register__container">
+    <h1>Register</h1>
+    <form action="/register" method="post" role="form" autocomplete="off">
+
+      <div class="group">
+        <input id="nombre" name='username' class="form-control" type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>NameUser</label>
+      </div>
+
+      <div class="group">
+        <input id="password" name='password' class="form-control" type="password" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+
+      <input type="submit" value="Register" class="register__container__btn">
+    </form>
+    <br>
+
+    <button class="btn btn-success my-3" onclick="location.href = '/login'">Ir a Login</button>
+  </section>
+</div>

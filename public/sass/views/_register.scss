@@ -1,0 +1,35 @@
+.register {
+    background-image: url("../img/wallpaper/wallpaperRegister.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+
+    & h1 {
+        color: white !important;
+    }
+
+    &__container {
+        width: 40%;
+        height: 100vh;
+        background: rgb(99, 141, 206) ;
+        background: linear-gradient(180deg, rgba(37, 58, 82, 0.9) 0%, rgba(82, 132, 224, 0.9) 100%) ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__btn:hover{
+            cursor: pointer;
+        }
+        & form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        & button{
+            padding: 10px 10px 10px 5px;
+            font-size: 18px;
+            width: 300px;
+        }
+    }
+}

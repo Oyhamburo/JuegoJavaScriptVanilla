@@ -1,0 +1,10 @@
+@font-face {
+    font-family: gameboy;
+    src: url(../fonts/pokemon-classic.ttf);
+}
+
+* {
+    font-family: gameboy;
+    margin: 0;
+    padding: 0;
+}

@@ -55,7 +55,7 @@ window.addEventListener('keyup', (e) => {
         case 'j': activeInventory4(); break
     }
 })
-const activeInventory = () => console.log('asd') 
+const activeInventory = () => console.log('active inventory') 
 const activeInventory2 = () => console.log('asd') 
 const activeInventory3 = () => {
 }

@@ -1,9 +1,9 @@
-const urlMaps = 'img/maps/'
-const urlFaceset = 'img/asset/faceset/'
-const URLPLAYER = 'img/asset/player/'
+const URLMAPS = '../img/maps/'
+const urlFaceset = '../img/asset/faceset/'
+const URLPLAYER = '../img/asset/player/'
 
 export { 
     URLPLAYER,
-    urlMaps,
+    URLMAPS,
     urlFaceset
 }

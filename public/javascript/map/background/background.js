@@ -1,5 +1,5 @@
 import { Sprite } from "../../class/spriteClass.js"
-import { urlMaps } from "../../utils/index.js"
+import { URLMAPS } from "../../utils/index.js"
 import { offset } from "../offset/index.js"
 //Defino Mapa
 
@@ -7,7 +7,7 @@ import { offset } from "../offset/index.js"
 
 const createBackground = (map) => { //mapStart
     let image = new Image()
-    image.src = `${urlMaps}${map}.png`
+    image.src = `${URLMAPS}${map}.png`
     const background = new Sprite({
         position: {
             x: offset.x,

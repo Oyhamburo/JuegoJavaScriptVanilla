@@ -1,0 +1,56 @@
+
+
+<section class="body__game">
+        <section class="container">
+                <div id="blackOut"></div>
+                <div id="dialog" class="dialog">
+                        <div id="dialogFaceset" class="dialog__faceset"></div>
+                        <div id="dialogChat" class="dialog__chat"></div>
+                </div>
+              
+
+                <!-- Chat  -->
+                <article class="container-chat">
+                        <div class="chat-body" id="chat-body">
+                                <p><span>Ujsi: </span>Hola soy una tortuga</p>
+                                <p class="user">Hola soy una tortuga<span> :Ujsi</span></p>
+                                <p><span>Ujsi: </span>Hola soy una tortuga</p>
+                        </div>
+                        <form class="chat-text" id="formChat">
+                                <input type="text" placeholder="Chat..." id="chatText">
+                                <input type="submit" value="enviar">
+                        </form>
+                </article>
+                <canvas>
+                </canvas>
+        </section>
+</section>
+ 
+<script type="module" src="javascript/index.js"></script>
+<script>
+  const userName = '{{username}}'
+  const socket = io(); 
+  socket.on('messages', messages => {
+    chatBox.innerHTML = ''; 
+    messages.forEach(message => {
+      if (userName === message.user){
+        chatBox.innerHTML += `<p class="user">${message.message}<span> :${userName}</span></p>`;
+      }else{
+        chatBox.innerHTML += `<p><span>${message.user}: </span>${message.message}</p>`;
+      }
+    })
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }); 
+  const chatForm = document.querySelector('#formChat'); 
+  const chatText = document.querySelector('#chatText'); 
+  const chatBox = document.querySelector('#chat-body'); 
+  chatForm.addEventListener('submit', e => {
+    e.preventDefault(); 
+    socket.emit('chat', {
+      messageId: socket.id, 
+      user: userName,
+      message: chatText.value
+    }); 
+    chatText.value = '';
+  });
+</script>

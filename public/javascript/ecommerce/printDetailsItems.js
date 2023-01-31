@@ -6,7 +6,7 @@ const chat = document.querySelector('#ecommerce__chat')
 const printDetailsItem = (items)=>{
     let item = items[iEcomerce]
     if(item){
-        thumbnail.style.backgroundImage = `url(public/img/asset/items/${item.image}`
+        thumbnail.style.backgroundImage = `url(http://localhost:8400/api/home/img/asset/items/${item.image})`
         chat.textContent = item.description
         writeChat(chat,item.description)
         // price

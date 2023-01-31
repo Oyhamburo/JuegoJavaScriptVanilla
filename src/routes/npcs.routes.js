@@ -12,4 +12,6 @@ router.put("/:id", npcController.updateById);
 
 router.delete("/:id", npcController.deleteById);
 
+
+
 export { router as npcRouter }
