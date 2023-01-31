@@ -17,17 +17,18 @@ import {
 } from "./routes/index.routes.js";
 
 //Parametros--
-const options = {
-    alias: {
-        "p": "PORT",
-        "m": "MODO"
-    },
-    default: {
-        "PORT": 8400,
-        "MODO": "DEV"
-    }
-}
-const { PORT, MODO } = minimist(process.argv.slice(2), options);
+// const options = {
+//     alias: {
+//         "p": "PORT",
+//         "m": "MODO"
+//     },
+//     default: {
+//         "PORT": 8400,
+//         "MODO": "DEV"
+//     }
+// }
+// const { PORT, MODO } = minimist(process.argv.slice(2), options);
+const PORT = process.env.PORT || 8400;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:477";
 
 const app = express()
