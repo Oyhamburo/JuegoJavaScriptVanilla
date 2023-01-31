@@ -1,6 +1,6 @@
 import express from "express";
 import passport from "passport";
-import {Authenticated} from "../middlewares/index.middlewares.js";
+import { Authenticated } from "../middlewares/index.middlewares.js";
 const router = express.Router();
 router.post(
     "/login",
@@ -14,7 +14,6 @@ router.post(
     "/register",
     passport.authenticate("register", { failureRedirect: "/failregister" }),
     (req, res) => {
-        console.log(req)
         res.redirect("/");
     }
 );

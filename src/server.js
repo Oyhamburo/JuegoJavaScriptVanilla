@@ -4,19 +4,21 @@ import mongoose from "mongoose";
 import cors from 'cors' //error de cors
 import minimist from "minimist"// pasar parametros
 import cookieParser from "cookie-parser";
-import {engine} from "express-handlebars";
-import { createServer as HttpServer} from "http";
-import { Server as IOServer} from "socket.io";
-import { socketEvent } from "./socket/chat.js";
+import dotenv from 'dotenv'
+import { engine } from "express-handlebars";
+import { createServer as HttpServer } from "http";
+import { Server as IOServer } from "socket.io";
+import { socketEvent } from "./socket/event.js";
 import { initPassport } from "./passport/init.js";
-import { sessionMongo }  from "./middlewares/index.middlewares.js";
+import { sessionMongo } from "./middlewares/index.middlewares.js";
 import {
     npcRouter,
     objectRouter,
-    viewsRouter
+    viewsRouter,
+    userRouter
 } from "./routes/index.routes.js";
-
 //Parametros--
+dotenv.config()
 // const options = {
 //     alias: {
 //         "p": "PORT",
@@ -41,10 +43,13 @@ app.use(cors())
 
 app.use(cookieParser());
 app.use(sessionMongo);
-app.engine("hbs",engine({
-    extname: ".hbs",
-    defaultLayout: "index.hbs",
-}));
+app.engine(
+    "hbs",
+    engine({
+        extname: ".hbs",
+        defaultLayout: "index.hbs",
+    })
+);
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 app.use(express.static("public"));
@@ -61,10 +66,11 @@ initPassport(passport)
 //Rutas
 app.use("/api/npc", npcRouter)
 app.use("/api/object", objectRouter)
-app.use("/",viewsRouter);
+app.use("/", viewsRouter);
+// app.use("/test", userRouter);
 
 
-app.listen(PORT, async () => {
+httpServer.listen(PORT, async () => {
     console.log(`Servidor http escuchando en el puerto ${PORT}`);
     try {
         await mongoose.connect(MONGO_URI, {
