@@ -272,7 +272,9 @@
   display: flex;
   justify-content: end; }
   .login h1 {
-    color: white !important; }
+    color: white !important;
+    font-size: 3rem;
+    margin-bottom: 3rem; }
   .login__container {
     width: 40%;
     height: 100vh;
@@ -400,9 +402,11 @@ input:focus ~ .highlight {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: end; }
+  justify-content: start; }
   .register h1 {
-    color: white !important; }
+    color: white !important;
+    font-size: 3rem;
+    margin-bottom: 3rem; }
   .register__container {
     width: 40%;
     height: 100vh;
@@ -422,6 +426,9 @@ input:focus ~ .highlight {
       padding: 10px 10px 10px 5px;
       font-size: 18px;
       width: 300px; }
+
+.testeoDIES {
+  color: white; }
 
 @font-face {
   font-family: gameboy;

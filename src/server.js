@@ -2,7 +2,6 @@ import express from "express"
 import passport from "passport";
 import mongoose from "mongoose";
 import cors from 'cors' //error de cors
-import minimist from "minimist"// pasar parametros
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv'
 import { engine } from "express-handlebars";
@@ -14,22 +13,11 @@ import { sessionMongo } from "./middlewares/index.middlewares.js";
 import {
     npcRouter,
     objectRouter,
-    viewsRouter,
     userRouter
 } from "./routes/index.routes.js";
-//Parametros--
+
 dotenv.config()
-// const options = {
-//     alias: {
-//         "p": "PORT",
-//         "m": "MODO"
-//     },
-//     default: {
-//         "PORT": 8400,
-//         "MODO": "DEV"
-//     }
-// }
-// const { PORT, MODO } = minimist(process.argv.slice(2), options);
+
 const PORT = process.env.PORT || 8400;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:477";
 
@@ -66,8 +54,7 @@ initPassport(passport)
 //Rutas
 app.use("/api/npc", npcRouter)
 app.use("/api/object", objectRouter)
-app.use("/", viewsRouter);
-// app.use("/test", userRouter);
+app.use("/", userRouter);
 
 
 httpServer.listen(PORT, async () => {

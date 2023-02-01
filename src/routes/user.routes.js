@@ -1,14 +1,49 @@
 import express from "express";
 const router = express.Router();
 import { UsuarioDao } from '../daos/index.dao.js';
-// import { sendGmail } from "../notifications/gmail/EmailSender.js";
-// import { htmlNewUserTemplate } from "../notifications/gmail/htmltemplates/NewUserCreatedTemplate.js";
+import { sendGmail } from "../mail/gmail/EmailSender.js";
+import { htmlNewUserTemplate } from "../mail/gmail/html/newUserCreateTemplate.js";
 
 const userDao = new UsuarioDao();
 
+// post
+router.post('/signup', async (req, res) => {
+    const { body } = req;
+    const newUser = await userDao.createUser(body);
+
+    if (newUser) {
+        const now = new Date();
+        const newUserTemplateEmail = htmlNewUserTemplate(newUser._id, now.toLocaleString());
+        // Descomentar si has llenado el .env con tu email y password.
+        await sendGmail('Nuevo usuario creado', newUserTemplateEmail);
+        res.redirect('game')
+    } else {
+        res.redirect('failsignup')
+    }
+
+})
+
+
+router.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const loggedUser = await userDao.loginUser({
+        username: username,
+        password: password
+    });
+    if (loggedUser) {
+        req.session.login = true;
+        res.status(200).redirect('game')
+    } else {
+        req.session.login = false;
+        res.status(400).redirect('faillogin')
+    }
+})
+
+
+// Get
 router.get('/login', async (req, res) => {
     if (req.session.login) {
-        res.redirect('login')
+        res.redirect('game')
     } else {
         res.render('login', { status: false })
     }
@@ -16,61 +51,41 @@ router.get('/login', async (req, res) => {
 
 router.get('/signup', (req, res) => {
     if (req.session.login) {
-        res.redirect('register')
+        res.redirect('game')
     } else {
-        res.render('register', { status: false })
+        res.render('signup', { status: false })
     }
 })
 
-router.post('/signup', async (req, res) => {
-    const { body } = req;
-    const newUser = await userDao.createUser(body);
+router.get("/failsignup", (req, res) => {
+    res.render("signup-error");
+});
 
-    if (newUser) {
-        const now = new Date();
-        // const newUserTemplateEmail = htmlNewUserTemplate(newUser._id, now.toLocaleString());
-        // Descomentar si has llenado el .env con tu email y password.
-        //await sendGmail('Nuevo usuario creado', newUserTemplateEmail);
-        res.status(200).json({ "success": "User added with ID " + newUser._id })
-    } else {
-        res.status(400).json({ "error": "there was an error, please verify the body content match the schema" })
-    }
-
-})
-
-
-router.post('/login', async (req, res) => {
-    const { user, pass } = req.body;
-    const loggedUser = await userDao.loginUser({
-        username: user,
-        password: pass
-    });
-
-    if (loggedUser) {
-        req.session.login = true;
-        res.redirect('/api/usuario')
-    } else {
-        req.session.login = false;
-        res.redirect('/api/usuario/login')
-    }
-})
-
-router.get('/', async (req, res) => {
-    res.render('pages/home', { status: req.session.login })
-})
+router.get("/faillogin", (req, res) => {
+    res.render("login-error");
+});
 
 router.get('/logout', async (req, res) => {
     if (!req.session.login) {
-        res.redirect('/api/usuario')
+        res.redirect('login')
     } else {
         req.session.destroy((err) => {
             if (err) {
                 res.json(err);
             } else {
-                res.render('pages/logout', { status: false });
+                res.render('login', { status: false });
             }
         })
     }
+})
+
+router.get('/game', (req, res) => {
+    // res.render('home',{ username: req.user.username })
+    res.render('home')
+})
+
+router.get('/', (req, res) => {
+    res.redirect('login')
 })
 
 export { router as userRouter };

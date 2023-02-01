@@ -1,0 +1,308 @@
+[2023-01-31T18:03:56.092] [ERROR] default - Error: usuarios validation failed: email: Path `email` is required.
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    email: ValidatorError: Path `email` is required.
+        at validate (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'email',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'usuarios validation failed'
+}
+[2023-01-31T18:04:25.705] [ERROR] default - Error: usuarios validation failed: email: Path `email` is required.
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    email: ValidatorError: Path `email` is required.
+        at validate (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'email',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'usuarios validation failed'
+}
+[2023-01-31T18:12:14.944] [ERROR] default - Error: usuarios validation failed: email: Path `email` is required.
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    email: ValidatorError: Path `email` is required.
+        at validate (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'email',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'usuarios validation failed'
+}
+[2023-01-31T19:32:04.535] [ERROR] default - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials e8-20020a9d5608000000b0066b9a6bf3bcsm7102945oti.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials e8-20020a9d5608000000b0066b9a6bf3bcsm7102945oti.12 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-01-31T19:41:36.284] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "jere" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'jere' },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-01-31T19:43:14.568] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "asd" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'asd' },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-01-31T19:43:22.370] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "asd" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'asd' },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-01-31T19:43:38.392] [ERROR] default - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials p11-20020a0568708a0b00b0013bc40b09dasm7132785oaq.17 - gsmtp
+    at SMTPConnection._formatError (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials p11-20020a0568708a0b00b0013bc40b09dasm7132785oaq.17 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-01-31T20:05:44.651] [ERROR] default - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials z12-20020a056870514c00b0014435b51ef7sm7224008oak.30 - gsmtp
+    at SMTPConnection._formatError (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials z12-20020a056870514c00b0014435b51ef7sm7224008oak.30 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-01-31T20:09:15.552] [ERROR] default - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials x10-20020a05683000ca00b0068bd6cf405dsm2296250oto.1 - gsmtp
+    at SMTPConnection._formatError (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials x10-20020a05683000ca00b0068bd6cf405dsm2296250oto.1 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-01-31T20:11:13.102] [ERROR] default - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials m126-20020acabc84000000b0036e3bb67a20sm6216756oif.38 - gsmtp
+    at SMTPConnection._formatError (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials m126-20020acabc84000000b0036e3bb67a20sm6216756oif.38 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-01-31T20:44:06.185] [ERROR] default - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials s22-20020a4ae496000000b00500c1100651sm6644651oov.45 - gsmtp
+    at SMTPConnection._formatError (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials s22-20020a4ae496000000b00500c1100651sm6644651oov.45 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-01-31T21:08:39.973] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "asd" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'asd' },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-01-31T21:10:19.352] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "asd" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'asd' },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-01-31T21:11:51.332] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "asd" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'asd' },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-01-31T21:13:10.140] [ERROR] default - MongoServerError: E11000 duplicate key error collection: test.usuarios index: username_1 dup key: { username: "asd" }
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection_pool.js:308:25
+    at C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:213:17
+    at handleOperationResult (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\sdam\server.js:329:20)
+    at Connection.onMessage (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:527:28)
+    at processIncomingData (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\Jelee\Desktop\codigos\nuevos proyectos\JuegoJavaScriptVanilla\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { username: 1 },
+  keyValue: { username: 'asd' },
+  [Symbol(errorLabels)]: Set(0) {}
+}

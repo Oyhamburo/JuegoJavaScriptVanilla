@@ -1,13 +1,20 @@
 <div class="register">
   <section class="register__container">
     <h1>Register</h1>
-    <form action="/register" method="post" role="form" autocomplete="off">
+    <form action="/signup" method="post" role="form" autocomplete="off">
 
       <div class="group">
         <input id="nombre" name='username' class="form-control" type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>NameUser</label>
+      </div>
+
+      <div class="group">
+        <input id="email" name='email' class="form-control" type="email" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Email</label>
       </div>
 
       <div class="group">
