@@ -31,7 +31,8 @@ router.post('/login', async (req, res) => {
         password: password
     });
     if (loggedUser) {
-        req.session.login = true;
+        req.session.login = true
+        req.session.user= username
         res.status(200).redirect('game')
     } else {
         req.session.login = false;
@@ -80,8 +81,12 @@ router.get('/logout', async (req, res) => {
 })
 
 router.get('/game', (req, res) => {
-    // res.render('home',{ username: req.user.username })
-    res.render('home')
+    if (req.session.login) {
+        let user = req.session.user
+        res.render('home',{ username: user })
+    }else{
+        res.redirect('login')
+    }
 })
 
 router.get('/', (req, res) => {

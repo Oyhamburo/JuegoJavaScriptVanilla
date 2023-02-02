@@ -17,7 +17,7 @@ const transporter = createTransport({
 const gmailOptions = (emailSubject, htmlTemplate) => {
     return {
         from: process.env.GMAIL_ACCOUNT,
-        to: TEST_MAIL,
+        to: to,
         subject: emailSubject,
         html: htmlTemplate
     }

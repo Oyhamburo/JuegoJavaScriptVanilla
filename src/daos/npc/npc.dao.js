@@ -1,8 +1,12 @@
 import { ContainerMongoDB } from "../../containers/index.container.js";
+import dotevn from 'dotenv'
+
+dotevn.config()
+const { MONGO_URI } = process.env
 
 class NPCsDaoMongoDB extends ContainerMongoDB {
     constructor(){
-        const uri =  'mongodb+srv://gameDB:VwgUGc5ragezctY0@gamedb.acky3ml.mongodb.net/?retryWrites=true&w=majority'
+        const uri =  MONGO_URI
         super(uri, 'gameProyect','npcs')
     }
 }

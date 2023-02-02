@@ -306,3 +306,8 @@
   keyValue: { username: 'asd' },
   [Symbol(errorLabels)]: Set(0) {}
 }
+[2023-01-31T21:58:16.119] [ERROR] default - ReferenceError: TEST_MAIL is not defined
+    at gmailOptions (file:///C:/Users/Jelee/Desktop/codigos/nuevos%20proyectos/JuegoJavaScriptVanilla/src/mail/gmail/EmailSender.js:20:13)
+    at sendGmail (file:///C:/Users/Jelee/Desktop/codigos/nuevos%20proyectos/JuegoJavaScriptVanilla/src/mail/gmail/EmailSender.js:29:29)
+    at file:///C:/Users/Jelee/Desktop/codigos/nuevos%20proyectos/JuegoJavaScriptVanilla/src/routes/user.routes.js:18:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

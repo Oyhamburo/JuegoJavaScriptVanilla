@@ -9,7 +9,7 @@ const printItems = async (items, shop) => {
     items.forEach((item, index) => {
         let cell = document.querySelector(`#ecommerce__window__img__item__${index}`)
         // cell.src = `public/img/asset/items/${item.image}`
-        cell.src = `http://localhost:8400/api/home/img/asset/items/${item.image}`
+        cell.src = `img/asset/items/${item.image}`
     });
 }
 

@@ -7,7 +7,7 @@ const printShop = (shop) => {
     removeInteraction()
     const windowShop = document.querySelector('#ecommerce')
     windowShop.style.display = 'block'
-    fetch(`http://localhost:8400/api/object`)
+    fetch(`/api/object`)
         .then((response) => response.json())
         .then((data) => printItems(data,shop) );
 

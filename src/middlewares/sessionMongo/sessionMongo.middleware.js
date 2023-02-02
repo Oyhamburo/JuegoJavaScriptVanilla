@@ -1,6 +1,8 @@
 import session from "express-session";
 import MongoStore from "connect-mongo";
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://gameDB:VwgUGc5ragezctY0@gamedb.acky3ml.mongodb.net/?retryWrites=true&w=majority";
+import dotenv from 'dotenv'
+dotenv.config()
+const MONGO_URI = process.env.MONGO_URI || "";
 export const sessionMongo = session({
   store: MongoStore.create({
     mongoUrl: MONGO_URI,

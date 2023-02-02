@@ -46,7 +46,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // session
-app.use(sessionMongo);
 app.use(passport.initialize());
 app.use(passport.session());
 initPassport(passport)
