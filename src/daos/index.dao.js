@@ -1,3 +1,1 @@
-export { NPCsDaoMongoDB } from "./npc/npc.dao.js";
-export { ObjectsDaoMongoDB } from "./object/object.dao.js"
-export { UsuarioDao } from "./user/user.dao.js"
+export { BaseDao } from "./BaseDao.js"

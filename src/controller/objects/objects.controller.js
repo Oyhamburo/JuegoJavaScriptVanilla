@@ -1,49 +1,51 @@
-import { Object } from "../../models/index.models.js"
-import { ObjectsDao } from "../../app.js"
+import { ObjectService } from "../../services/index.service.js";
 
-const objectController = {}
+const service = ObjectService.getInstance();
+const controller = {}
 
-objectController.getAll = async (req, res, next) => {
-    try {
-        const objects = await ObjectsDao.getAll()
-        res.json(objects)
-    } catch (error) {
-        next(error)
-    }
+controller.getAll = async (req, res) => {
+    const objects = await service.getAll();
+    objects
+        ? res.status(200).json(objects)
+        : res.status(400).json({ "error": "there was a problem when trying to get the products" })
 }
-objectController.addNew = async (req, res, next) => {
-    const data = new Object(req.body);
-    try {
-        res.json(await ObjectsDao.addItem(data));
-    } catch (error) {
-        next(error);
-    }
-};
-objectController.getById = async (req, res, next) => {
-    const { id } = req.params
-    try {
-        const object = await ObjectsDao.getById(id)
-        res.json(object)
-    } catch (error) {
-        next(error)
-    }
-}
-objectController.deleteById = async (req, res, next) => {
-    const id = req.params.id;
-    try {
-        res.json(await ObjectsDao.deleteItem(id));
-    } catch (error) {
-        next(error);
-    }
-};
-objectController.updateById = async (req, res, next) => {
-    const id = req.params.id;
-    const data = req.body;
-    try {
-        res.json(await ObjectsDao.updateItem(id, data));
-    } catch (error) {
-        next(error);
-    }
-};
 
-export { objectController }
+controller.getById = async (req, res) => {
+    const { id } = req.params;
+    const object = await service.getProductById(id);
+
+    object
+        ? res.status(200).json(object)
+        : res.status(400).json({ "error": "product not found" })
+}
+
+controller.create = async (req, res) => {
+    const { body } = req;
+    const newObject = await service.createProduct(body);
+
+    newObject
+        ? res.status(200).json({ "success": "Product added with ID " + newObject._id })
+        : res.status(400).json({ "error": "there was an error, please verify the body content match the schema" })
+}
+
+controller.update = async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const wasUpdated = await service.updateProductById(id, body);
+
+    wasUpdated
+        ? res.status(200).json({ "success": "product updated" })
+        : res.status(404).json({ "error": "product not found or invalid body content." })
+}
+
+controller.remove = async (req, res) => {
+    const { id } = req.params;
+    const wasDeleted = await service.deleteProductById(id)
+
+    wasDeleted
+        ? res.status(200).json({ "success": "product successfully removed" })
+        : res.status(404).json({ "error": "product not found" })
+}
+
+
+export { controller as objectController }

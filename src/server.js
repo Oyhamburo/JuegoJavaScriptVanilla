@@ -8,7 +8,7 @@ import { engine } from "express-handlebars";
 import { createServer as HttpServer } from "http";
 import { Server as IOServer } from "socket.io";
 import { socketEvent } from "./socket/event.js";
-import { initPassport } from "./passport/init.js";
+// import { initPassport } from "./passport/init.js";
 import { sessionMongo } from "./middlewares/index.middlewares.js";
 import {
     npcRouter,
@@ -48,7 +48,7 @@ app.use(express.urlencoded({ extended: true }));
 // session
 app.use(passport.initialize());
 app.use(passport.session());
-initPassport(passport)
+// initPassport(passport)
 
 //Rutas
 app.use("/api/npc", npcRouter)

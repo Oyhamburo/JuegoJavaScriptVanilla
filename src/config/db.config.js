@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { logger } from "../log/log4jsLogger.js";
+import { logger } from "../utils/log/log4jsLogger.js";
 
 dotenv.config();
 
@@ -10,4 +10,4 @@ mongoose.connect(process.env.MONGO_URI, (err) => {
         : logger.info("🆗 Conectados a MongoDB")
 })
 
-export default mongoose;
+export default mongoose ;

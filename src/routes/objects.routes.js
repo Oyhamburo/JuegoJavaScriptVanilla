@@ -6,10 +6,10 @@ router.get('/', objectController.getAll)
 
 router.get('/:id', objectController.getById)
 
-router.post("/", objectController.addNew);
+router.post("/", objectController.create);
 
-router.put("/:id", objectController.updateById);
+router.put("/:id", objectController.update);
 
-router.delete("/:id", objectController.deleteById);
+router.delete("/:id", objectController.remove);
 
 export { router as objectRouter }

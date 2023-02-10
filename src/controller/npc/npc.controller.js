@@ -1,57 +1,51 @@
-import { NPCs } from "../../models/NPCs/npc.models.js"
-import { NPCsDao } from "../../app.js"
+import { NPCService } from "../../services/index.service.js";
 
-const npcController = {}
+const service = NPCService.getInstance();
+const controller = {}
 
-npcController.getAll = async (req, res, next) => {
-    try {
-        const npcs = await NPCsDao.getAll()
-        res.json(npcs)
-    } catch (error) {
-        next(error)
-    }
+controller.getAll = async (req, res) => {
+    const npcs = await service.getAll();
+    npcs
+        ? res.status(200).json(npcs)
+        : res.status(400).json({ "error": "there was a problem when trying to get the products" })
 }
-npcController.addNew = async (req, res, next) => {
-    const data = new NPCs(req.body);
-    try {
-        res.json(await NPCsDao.addItem(data));
-    } catch (error) {
-        next(error);
-    }
-};
-npcController.oka = async (req, res, next) => {
-    try {
-        console.log('POST OKA')
-        console.log(req.body)
-    } catch (error) {
-        next(error);
-    }
-};
-npcController.getById = async (req, res, next) => {
-    const { id } = req.params
-    try {
-        const npc = await NPCsDao.getById(id)
-        res.json(npc)
-    } catch (error) {
-        next(error)
-    }
-}
-npcController.deleteById = async (req, res, next) => {
-    const id = req.params.id;
-    try {
-        res.json(await NPCsDao.deleteItem(id));
-    } catch (error) {
-        next(error);
-    }
-};
-npcController.updateById = async (req, res, next) => {
-    const id = req.params.id;
-    const data = req.body;
-    try {
-        res.json(await NPCsDao.updateItem(id, data));
-    } catch (error) {
-        next(error);
-    }
-};
 
-export { npcController }
+controller.getById = async (req, res) => {
+    const { id } = req.params;
+    const npc = await service.getProductById(id);
+
+    npc
+        ? res.status(200).json(npc)
+        : res.status(400).json({ "error": "product not found" })
+}
+
+controller.create = async  (req, res) => {
+    const { body } = req;
+    const newNPC = await service.createProduct(body);
+
+    newNPC
+        ? res.status(200).json({ "success": "NPC added with ID " + newNPC._id })
+        : res.status(400).json({ "error": "there was an error, please verify the body content match the schema" })
+}
+
+controller.update = async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const wasUpdated = await service.updateProductById(id, body);
+
+    wasUpdated
+        ? res.status(200).json({ "success": "product updated" })
+        : res.status(404).json({ "error": "product not found or invalid body content." })
+}
+
+controller.remove = async (req, res) => {
+    const { id } = req.params;
+    const wasDeleted = await service.deleteProductById(id)
+
+    wasDeleted
+        ? res.status(200).json({ "success": "product successfully removed" })
+        : res.status(404).json({ "error": "product not found" })
+}
+
+
+export { controller as npcController }
