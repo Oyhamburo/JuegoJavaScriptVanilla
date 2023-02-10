@@ -6,11 +6,11 @@ router.get('/', npcController.getAll)
 
 router.get('/:id', npcController.getById)
 
-router.post("/", npcController.addNew);
+router.post("/", npcController.create);
 
-router.put("/:id", npcController.updateById);
+router.put("/:id", npcController.update);
 
-router.delete("/:id", npcController.deleteById);
+router.delete("/:id", npcController.remove);
 
 
 

@@ -1,5 +1,7 @@
+body {
+  background-color: black; }
+
 .body__game {
-  background-color: black;
   display: flex;
   justify-content: center; }
 

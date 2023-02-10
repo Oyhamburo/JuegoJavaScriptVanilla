@@ -1,0 +1,175 @@
+[2023-02-06T23:47:14.173] [ERROR] default - CastError: Cast to ObjectId failed for value "305" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15) {
+  messageFormat: undefined,
+  stringValue: '"305"',
+  kind: 'ObjectId',
+  value: '305',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:47:15.372] [ERROR] default - CastError: Cast to ObjectId failed for value "305" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15) {
+  messageFormat: undefined,
+  stringValue: '"305"',
+  kind: 'ObjectId',
+  value: '305',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:47:15.557] [ERROR] default - CastError: Cast to ObjectId failed for value "305" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15) {
+  messageFormat: undefined,
+  stringValue: '"305"',
+  kind: 'ObjectId',
+  value: '305',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:47:15.745] [ERROR] default - CastError: Cast to ObjectId failed for value "305" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15) {
+  messageFormat: undefined,
+  stringValue: '"305"',
+  kind: 'ObjectId',
+  value: '305',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:47:15.922] [ERROR] default - CastError: Cast to ObjectId failed for value "305" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15) {
+  messageFormat: undefined,
+  stringValue: '"305"',
+  kind: 'ObjectId',
+  value: '305',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:47:56.389] [ERROR] default - CastError: Cast to ObjectId failed for value "307" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  messageFormat: undefined,
+  stringValue: '"307"',
+  kind: 'ObjectId',
+  value: '307',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:49:52.583] [ERROR] default - CastError: Cast to ObjectId failed for value "307" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  messageFormat: undefined,
+  stringValue: '"307"',
+  kind: 'ObjectId',
+  value: '307',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:51:19.048] [ERROR] default - CastError: Cast to ObjectId failed for value "307" (type string) at path "_id" for model "npcs"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  messageFormat: undefined,
+  stringValue: '"307"',
+  kind: 'ObjectId',
+  value: '307',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12),
+  valueType: 'string'
+}
+[2023-02-06T23:52:19.063] [ERROR] default - ReferenceError: product is not defined
+    at Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:32:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:15:17)

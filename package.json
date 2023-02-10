@@ -7,6 +7,7 @@
     "start": "node src/server.js"
   },
   "dependencies": {
+    "autocannon": "^7.10.0",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.6.0",
