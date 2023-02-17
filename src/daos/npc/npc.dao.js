@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { asDto } from '../dtos/PersonaDTO.js'
+import { asDto } from '../../dtos/index.dtos.js'
 import dotenv from "dotenv";
 import { logger } from '../../utils/log/log4jsLogger.js';
 

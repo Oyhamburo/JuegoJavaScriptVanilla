@@ -1,19 +1,23 @@
 // import { NPCModel } from "../../models/index.models.js";
-import  npcRepo  from "../../repository/repository.js";
+import  {npcRepo}  from "../../repository/repository.js";
+
+let instacia = null
+
+const repo = new npcRepo
 
 class Service {
 
     CODE = "code";
     
-    static getInstancia=()=>{
+    static getInstance=()=>{
         if(!instacia)
-            instacia=new PrimeraConexion()
+            instacia=new Service()
         return instacia
     }
 
     static async exists(CODE) {
         try {
-            return await npcRepo.exists(CODE);
+            return await repo.exists(CODE);
         } catch (error) {
             console.error(error);
         }
@@ -21,7 +25,7 @@ class Service {
 
     async getAll() {
         try {
-            return await npcRepo.getAll();
+            return await repo.getAll();
         } catch (error) {
             console.error(error);
             return false;
@@ -30,7 +34,7 @@ class Service {
     
     async getProductById(code) {
         try {
-            const npc = await npcRepo.getById(code)
+            const npc = await repo.getById(code)
             return npc;
         } catch (error) {
             console.error(error);
@@ -40,7 +44,7 @@ class Service {
     
     async createProduct(code) {
         try {
-            return await npcRepo.create(code)
+            return await repo.create(code)
         } catch (error) {
             console.error(error);
             return false;
@@ -49,7 +53,7 @@ class Service {
     
     async updateProductById(code, object) {
         try {
-            await npcRepo.updateById(code, object)
+            await repo.updateById(code, object)
             return true;
         } catch (error) {
             console.error(error);
@@ -59,7 +63,7 @@ class Service {
     
     async deleteProductById(code) {
         try {
-            return await npcRepo.removeById(code)
+            return await repo.removeById(code)
         } catch (error) {
             console.error(error);
             return false;

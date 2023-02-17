@@ -173,3 +173,15 @@
     at Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:32:13)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:15:17)
+[2023-02-17T01:41:50.455] [ERROR] default - TypeError: Class constructor NPCdto cannot be invoked without 'new'
+    at PersonasDaoDb.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:70:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async npcRepo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:19:21)
+    at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:37:25)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:15:17)
+[2023-02-17T01:43:27.378] [ERROR] default - TypeError: Class constructor NPCdto cannot be invoked without 'new'
+    at PersonasDaoDb.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:58:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async npcRepo.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:13:22)
+    at async Service.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:28:20)
+    at async controller.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:7:18)

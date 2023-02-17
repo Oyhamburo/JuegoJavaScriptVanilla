@@ -15,8 +15,10 @@ switch (opcion) {
         // dao = new PersonasDaoMem()
 }
 
-export default class NPCsDaoFactory {
+class NPCsDaoFactory {
     static getDao() {
         return dao
     }
 }
+
+export { NPCsDaoFactory }

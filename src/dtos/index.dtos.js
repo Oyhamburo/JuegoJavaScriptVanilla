@@ -1,1 +1,1 @@
-export {NPCdto} from "./npc.dto.js"
+export {asDto} from "./npc.dto.js"

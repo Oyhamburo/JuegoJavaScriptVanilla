@@ -1,30 +1,31 @@
-import NPCmodel from '../models/index.models.js'
-import NPCsDaoFactory from '../daos/factory/index.factory.js'
-import { NPCdto } from '../dtos/index.dtos.js'
+import { NPCmodel } from '../models/index.models.js'
+import { NPCsDaoFactory } from '../daos/factory/index.factory.js'
+import { asDto } from '../dtos/index.dtos.js'
 
-export default class npcRepo {
+ class npcRepo {
     #dao
 
     constructor() {
         this.#dao = NPCsDaoFactory.getDao()
     }
 
-    async getAll() {//find
+    async getAll() {
         const npcs = await this.#dao.getAll()
-        return npcs.map(n => new modelNPC(n))
+        return npcs.map(n => new NPCmodel(n))
     }
 
     async getById(code) {
+        console.log(' si is not funci')
         const dto = await this.#dao.getById(code)
-        return new modelNPC(dto)
+        return new NPCmodel(dto)
     }
 
     async exists(code) {
         return await this.#dao.getById(code)
     }
 
-    async create(newNpc){
-        await this.#dao.save(NPCdto(newNpc))
+    async create(newNpc) {
+        await this.#dao.save(asDto(newNpc))
     }
 
     async removeById(code) {
@@ -36,3 +37,5 @@ export default class npcRepo {
         await this.#dao.updateById(code, object)
     }
 }
+
+export {npcRepo}

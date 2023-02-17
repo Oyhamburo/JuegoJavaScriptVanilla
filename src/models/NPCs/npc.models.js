@@ -1,4 +1,4 @@
-export default class NPCmodel {
+class NPCmodel {
     #id
     #name
     #description
@@ -6,7 +6,7 @@ export default class NPCmodel {
     #faceset
     #chat
 
-    constructor({ id, name, description, dni, dni, dni }) {
+    constructor({ id, name, description, code, faceset, chat }) {
         this.id = id
         this.name = name
         this.description = description
@@ -58,3 +58,5 @@ export default class NPCmodel {
         this.#chat = chat
     }
 }
+
+export { NPCmodel }
