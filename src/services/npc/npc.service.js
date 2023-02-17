@@ -1,84 +1,67 @@
-import { NPCModel } from "../../models/index.models.js";
-import { BaseDao } from "../../daos/BaseDao.js";
+// import { NPCModel } from "../../models/index.models.js";
+import  npcRepo  from "../../repository/repository.js";
 
-class Service extends BaseDao {
+class Service {
 
-    ID_FIELD = "_id";
     CODE = "code";
     
-    static getInstance() {
-        return new Service();
-    }
-
-    constructor() {
-        if (typeof Service.instance === 'object') {
-            return Service.instance;
-        }
-        super();
-        Service.instance = this;
-        return this;
+    static getInstancia=()=>{
+        if(!instacia)
+            instacia=new PrimeraConexion()
+        return instacia
     }
 
     static async exists(CODE) {
         try {
-            return await NPCModel.findById(CODE);
+            return await npcRepo.exists(CODE);
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
         }
     }
 
     async getAll() {
         try {
-            return await NPCModel.find();
+            return await npcRepo.getAll();
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
     
     async getProductById(code) {
         try {
-            const npc = await NPCModel.findOne({
-                [this.CODE] : code
-            })
+            const npc = await npcRepo.getById(code)
             return npc;
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
     
     async createProduct(code) {
         try {
-            return await NPCModel.create(code)
+            return await npcRepo.create(code)
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
     
     async updateProductById(code, object) {
         try {
-            await NPCModel.findByIdAndUpdate(
-                {
-                    [this.CODE] : code
-                },
-                object, 
-                {
-                    runValidators: true
-                })
+            await npcRepo.updateById(code, object)
             return true;
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
     
     async deleteProductById(code) {
         try {
-            return await NPCModel.findByIdAndDelete({[this.CODE]: code})
+            return await npcRepo.removeById(code)
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }

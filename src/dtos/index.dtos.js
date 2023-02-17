@@ -1,0 +1,1 @@
+export {NPCdto} from "./npc.dto.js"

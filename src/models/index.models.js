@@ -1,3 +1,3 @@
-export { NPCModel } from "./NPCs/npc.models.js";
+export { NPC } from "./NPCs/npc.models.js";
 export { ObjectModel } from "./object/object.model.js"
 export { UsuariosModel } from "./user/user.model.js"

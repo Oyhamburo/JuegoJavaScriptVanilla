@@ -1,6 +1,3 @@
-// import "../../config/db.config.js";
-// import { logger } from "../../utils/log/log4jsLogger.js";
-
 import { ObjectModel } from "../../models/index.models.js";
 import { BaseDao } from "../../daos/index.dao.js";
 
