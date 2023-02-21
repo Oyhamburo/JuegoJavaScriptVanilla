@@ -15,7 +15,6 @@ import { asDto } from '../dtos/index.dtos.js'
     }
 
     async getById(code) {
-        console.log(' si is not funci')
         const dto = await this.#dao.getById(code)
         return new NPCmodel(dto)
     }
