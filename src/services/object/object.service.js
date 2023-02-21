@@ -1,84 +1,62 @@
-import { ObjectModel } from "../../models/index.models.js";
-import { BaseDao } from "../../daos/index.dao.js";
+import { ObjectRepo } from "../../repository/index.repository.js"
 
-class Service extends BaseDao{
+let instaciaObject = null
 
-    ID_FIELD = "_id";
-    CODE = "code"
+const repo = new ObjectRepo
 
-    static getInstance() {
-        return new Service();
-    }
 
-    constructor() {
-        if(typeof Service.instance === 'object') {
-            return Service.instance;
-        }
-        super();
-        Service.instance = this;
-        return this;
-    }
+class Service {
 
-    static async exists(code) {
-        try {
-            return await ObjectModel.findById(code);
-        } catch (error) {
-            this.logger.error(error);
-        }
+
+    static getInstance = () => {
+        if (!instaciaObject)
+            instaciaObject = new Service()
+        return instaciaObject
     }
 
     async getAll() {
         try {
-            return await ObjectModel.find();
+            return await repo.getAll();
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
 
     async getProductById(code) {
         try {
-            const product = await ObjectModel.findOne({
-                [this.CODE]: code
-            })
-            return product;
+            const object = await repo.getById(code)
+            return object;
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
 
     async createProduct(object) {
         try {
-            return await ObjectModel.create(object)
+            return await repo.create(object)
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
 
     async updateProductById(id, object) {
         try {
-            await ObjectModel.findByIdAndUpdate(
-                {
-                    [this.CODE]: id
-                },
-                object,
-                {
-                    runValidators: true
-                })
+            await repo.updateById(id, object)
             return true;
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
 
     async deleteProductById(id) {
         try {
-            return await ObjectModel.findByIdAndDelete({ [this.CODE]: id })
+            return await repo.removeById(id)
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }

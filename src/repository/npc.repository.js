@@ -11,12 +11,14 @@ import { asDto } from '../dtos/index.dtos.js'
 
     async getAll() {
         const npcs = await this.#dao.getAll()
-        return npcs.map(n => new NPCmodel(n))
+        // return npcs.map(n => new NPCmodel(n))
+        return npcs
     }
 
     async getById(code) {
         const dto = await this.#dao.getById(code)
-        return new NPCmodel(dto)
+        // return new NPCmodel(dto)
+        return dto
     }
 
     async exists(code) {
@@ -24,12 +26,13 @@ import { asDto } from '../dtos/index.dtos.js'
     }
 
     async create(newNpc) {
-        await this.#dao.save(asDto(newNpc))
+        await this.#dao.create(asDto(newNpc))
     }
 
     async removeById(code) {
         const removida = await this.#dao.deleteById(code)
-        return new NPCmodel(removida)
+        // return new NPCmodel(removida)
+        return removida
     }
 
     async updateById(code, object) {

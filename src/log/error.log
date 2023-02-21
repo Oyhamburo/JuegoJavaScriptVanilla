@@ -185,3 +185,157 @@
     at async npcRepo.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:13:22)
     at async Service.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:28:20)
     at async controller.getAll (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:7:18)
+[2023-02-21T14:18:56.644] [ERROR] default - Error: npcs validation failed: code: Path `code` (233) is more than maximum allowed value (20).
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    code: ValidatorError: Path `code` (233) is more than maximum allowed value (20).
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'max',
+      path: 'code',
+      value: 233,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'npcs validation failed'
+}
+[2023-02-21T14:19:21.664] [ERROR] default - Error: npcs validation failed: code: Path `code` (233) is more than maximum allowed value (20).
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    code: ValidatorError: Path `code` (233) is more than maximum allowed value (20).
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'max',
+      path: 'code',
+      value: 233,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'npcs validation failed'
+}
+[2023-02-21T14:22:46.690] [ERROR] default - ReferenceError: id is not defined
+    at PersonasDaoDb.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:67:78)
+    at npcRepo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:31:42)
+    at Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:66:31)
+    at controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:43:38)
+    at Layer.handle [as handle_request] (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\index.js:365:14)
+[2023-02-21T14:23:05.058] [ERROR] default - ReferenceError: id is not defined
+    at PersonasDaoDb.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:67:78)
+    at npcRepo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:31:42)
+    at Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:66:31)
+    at controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:43:38)
+    at Layer.handle [as handle_request] (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\index.js:365:14)
+[2023-02-21T14:58:19.279] [ERROR] default - Error: npcs validation failed: code: Path `code` (3222) is more than maximum allowed value (20).
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    code: ValidatorError: Path `code` (3222) is more than maximum allowed value (20).
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'max',
+      path: 'code',
+      value: 3222,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'npcs validation failed'
+}
+[2023-02-21T15:00:29.149] [ERROR] default - ReferenceError: id is not defined
+    at PersonasDaoDb.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:92:78)
+    at npcRepo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:33:42)
+    at Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:66:31)
+    at controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:43:38)
+    at Layer.handle [as handle_request] (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\express\lib\router\index.js:365:14)
+[2023-02-21T15:01:03.205] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new NPCdto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/npc.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/npc.dto.js:16:16)
+    at PersonasDaoDb.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:73:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async npcRepo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/repository.js:19:21)
+    at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:37:25)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:15:17)
+[2023-02-21T15:43:32.150] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new NPCdto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/npc.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/npc.dto.js:16:16)
+    at NPCsDaoMongo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/npc/npc.dao.js:73:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async npcRepo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/npc.repository.js:19:21)
+    at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/npc/npc.service.js:35:25)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/npc/npc.controller.js:15:17)
+[2023-02-21T15:44:17.514] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:73:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:19:24)
+    at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:28:28)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:15:20)
+[2023-02-21T15:45:41.009] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:74:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:19:24)
+    at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:28:28)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:15:20)
+[2023-02-21T15:47:19.998] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:73:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:20:24)
+    at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:28:28)
+    at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:15:20)

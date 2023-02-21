@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { asDto } from '../../dtos/index.dtos.js'
+import { asDtoObject } from '../../dtos/index.dtos.js'
 import dotenv from "dotenv";
 import { logger } from '../../utils/log/log4jsLogger.js';
 
@@ -21,25 +21,25 @@ const Schema = new mongoose.Schema({
         required: true,
         max: 1000
     },
-    faceset: {
+    image: {
         type: String,
         required: true,
         max: 130
     },
-    chat: {
+    stats: {
         type: String,
-        required: true,
+        required: false,
         max: 500
     }
 })
 
-export class NPCsDaoMongo {
+export class ObjectsDaoMongo {
 
     CODE = "code";
 
 
     constructor() {
-        this.model = mongoose.model('npcs', Schema)
+        this.model = mongoose.model('objects', Schema)
     }
 
     async init() {
@@ -57,8 +57,8 @@ export class NPCsDaoMongo {
 
     async getAll() {
         try {
-            const npcs = await this.model.find({})
-            return asDto(npcs)
+            const objects = await this.model.find({})
+            return asDtoObject(objects)
         } catch (error) {
             logger.error(error);
             return false;
@@ -67,20 +67,20 @@ export class NPCsDaoMongo {
 
     async getById(code) {
         try {
-            const npc = await this.model.findOne({
+            const object = await this.model.findOne({
                 [this.CODE]: code
             })
-            return asDto(npc)
+            return asDtoObject(object)
         } catch (error) {
             logger.error(error);
             return false;
         }
     }
 
-    async create(npc) {
+    async create(object) {
         try {
-            await this.model.create(npc)
-            return asDto(npc)
+            await this.model.create(object)
+            return asDtoObject(object)
         } catch (error) {
             logger.error(error);
             return false;
@@ -90,7 +90,7 @@ export class NPCsDaoMongo {
     async deleteById(id) {
         try {
             const borrada = await this.model.findOneAndDelete({ [this.CODE]: id })
-            return asDto(borrada)
+            return asDtoObject(borrada)
         } catch (error) {
             logger.error(error);
             return false;
@@ -109,7 +109,7 @@ export class NPCsDaoMongo {
                 {
                     runValidators: true
                 })
-            return asDto(actualizada)
+            return asDtoObject(actualizada)
         } catch (error) {
             logger.error(error);
             return false;

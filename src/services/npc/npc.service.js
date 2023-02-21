@@ -1,27 +1,25 @@
-// import { NPCModel } from "../../models/index.models.js";
-import  {npcRepo}  from "../../repository/repository.js";
+import { npcRepo } from "../../repository/index.repository.js"
 
-let instacia = null
+let instaciaNpc = null
 
 const repo = new npcRepo
 
 class Service {
 
-    CODE = "code";
-    
-    static getInstance=()=>{
-        if(!instacia)
-            instacia=new Service()
-        return instacia
+
+    static getInstance = () => {
+        if (!instaciaNpc)
+            instaciaNpc = new Service()
+        return instaciaNpc
     }
 
-    static async exists(CODE) {
-        try {
-            return await repo.exists(CODE);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    // static async exists(CODE) {
+    //     try {
+    //         return await repo.exists(CODE);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
 
     async getAll() {
         try {
@@ -31,7 +29,7 @@ class Service {
             return false;
         }
     }
-    
+
     async getProductById(code) {
         try {
             const npc = await repo.getById(code)
@@ -41,7 +39,7 @@ class Service {
             return false;
         }
     }
-    
+
     async createProduct(code) {
         try {
             return await repo.create(code)
@@ -50,7 +48,7 @@ class Service {
             return false;
         }
     }
-    
+
     async updateProductById(code, object) {
         try {
             await repo.updateById(code, object)
@@ -60,7 +58,7 @@ class Service {
             return false;
         }
     }
-    
+
     async deleteProductById(code) {
         try {
             return await repo.removeById(code)
@@ -69,7 +67,7 @@ class Service {
             return false;
         }
     }
-    
+
 }
 
-export {Service as NPCService}
+export { Service as NPCService }

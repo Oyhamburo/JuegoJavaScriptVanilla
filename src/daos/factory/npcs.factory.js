@@ -1,7 +1,7 @@
-import NPCsDaoMongo from '../npc/npc.dao.js'
+import { NPCsDaoMongo } from '../index.dao.js'
 
 
-const opcion = process.argv[ 2 ] || 'Mongo'
+const opcion = process.argv[2] || 'Mongo'
 
 let dao
 switch (opcion) {
@@ -9,10 +9,10 @@ switch (opcion) {
         dao = new NPCsDaoMongo()
         await dao.init()
         break
-    
+
     default:
         console.log('falta DAO')
-        // dao = new PersonasDaoMem()
+    // dao = new PersonasDaoMem()
 }
 
 class NPCsDaoFactory {

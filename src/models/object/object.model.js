@@ -1,40 +1,62 @@
-import mongoose from "mongoose";
+class ObjectModel {
+    #id
+    #name
+    #description
+    #code
+    #image
+    #stats
 
-const Schema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        max: 20
-    },
-    description: {
-        type: String,
-        required: true,
-        max: 200
-    },
-    code: {
-        type: Number,
-        required: true,
-        max: 20
-    },
-    image: {
-        type: String,
-        required: true,
-        max: 130
-    },
-    stats: {
-        type: String,
-        required: true,
-        max: 500
-    },
-})
+    constructor({ id, name, description, code, faceset, chat }) {
+        this.id = id
+        this.name = name
+        this.description = description
+        // this.code = code
+        this.faceset = faceset
+        this.chat = chat
+    }
 
-export const ObjectModel = mongoose.model("objects", Schema);
+    get id() { return this.#id }
 
+    set id(id) {
+        if (!id) throw new Error('"id" es un campo requerido')
+        this.#id = id
+    }
 
-// stats : {
-//     physical,
-//     magic,
-//     armor,
-//     magicResist,
-//     health
-// }
+    get name() { return this.#name }
+
+    set name(name) {
+        if (!name) throw new Error('"nombre" es un campo requerido')
+        this.#name = name
+    }
+
+    get description() { return this.#description }
+
+    set description(description) {
+        if (!description) throw new Error('"description" es un campo requerido')
+        this.#description = description
+    }
+
+    get code() { return this.#code }
+
+    set code(code) {
+        if (!code) throw new Error('"code" es un campo requerido')
+        if (isNaN(code)) throw new Error('"code" es un campo de caracteres exclusivamente numéricos')
+        this.#code = code
+    }
+
+    get image() { return this.#image }
+
+    set image(image) {
+        if (!image) throw new Error('"image" es un campo requerido')
+        this.#image = image
+    }
+
+    get stats() { return this.#stats }
+
+    set stats(stats) {
+        if (!stats) throw new Error('"stats" es un campo requerido')
+        this.#stats = stats
+    }
+}
+
+export { ObjectModel }
