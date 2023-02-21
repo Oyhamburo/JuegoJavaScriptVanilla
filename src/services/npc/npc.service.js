@@ -1,88 +1,73 @@
-import { NPCModel } from "../../models/index.models.js";
-import { BaseDao } from "../../daos/BaseDao.js";
+import { npcRepo } from "../../repository/index.repository.js"
 
-class Service extends BaseDao {
+let instaciaNpc = null
 
-    ID_FIELD = "_id";
-    CODE = "code";
-    
-    static getInstance() {
-        return new Service();
+const repo = new npcRepo
+
+class Service {
+
+
+    static getInstance = () => {
+        if (!instaciaNpc)
+            instaciaNpc = new Service()
+        return instaciaNpc
     }
 
-    constructor() {
-        if (typeof Service.instance === 'object') {
-            return Service.instance;
-        }
-        super();
-        Service.instance = this;
-        return this;
-    }
-
-    static async exists(CODE) {
-        try {
-            return await NPCModel.findById(CODE);
-        } catch (error) {
-            this.logger.error(error);
-        }
-    }
+    // static async exists(CODE) {
+    //     try {
+    //         return await repo.exists(CODE);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
 
     async getAll() {
         try {
-            return await NPCModel.find();
+            return await repo.getAll();
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
-    
+
     async getProductById(code) {
         try {
-            const npc = await NPCModel.findOne({
-                [this.CODE] : code
-            })
+            const npc = await repo.getById(code)
             return npc;
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
-    
+
     async createProduct(code) {
         try {
-            return await NPCModel.create(code)
+            return await repo.create(code)
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
-    
+
     async updateProductById(code, object) {
         try {
-            await NPCModel.findByIdAndUpdate(
-                {
-                    [this.CODE] : code
-                },
-                object, 
-                {
-                    runValidators: true
-                })
+            await repo.updateById(code, object)
             return true;
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
-    
+
     async deleteProductById(code) {
         try {
-            return await NPCModel.findByIdAndDelete({[this.CODE]: code})
+            return await repo.removeById(code)
         } catch (error) {
-            this.logger.error(error);
+            console.error(error);
             return false;
         }
     }
-    
+
 }
 
-export {Service as NPCService}
+export { Service as NPCService }
