@@ -17,17 +17,16 @@ class Repo {
 
     async getById(code) {
         const object = await this.#dao.getById(code)
-        console.log('repositorio',object)
-        return  new AdaptadorObjects(new ObjectModel(object)).devolver()
+        return new AdaptadorObjects(new ObjectModel(object)).devolver()
     }
 
     async create(newObject) {
-        await this.#dao.create(asDtoObject(newObject))
+        return await this.#dao.create(asDtoObject(newObject))
     }
 
     async removeById(code) {
         const delet = await this.#dao.deleteById(code)
-        return  new AdaptadorObjects(new ObjectModel(delet)).devolver()
+        return new AdaptadorObjects(new ObjectModel(delet)).devolver()
     }
 
     async updateById(code, object) {

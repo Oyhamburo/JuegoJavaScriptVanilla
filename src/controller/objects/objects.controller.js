@@ -22,7 +22,6 @@ controller.getById = async (req, res) => {
 controller.create = async (req, res) => {
     const { body } = req;
     const newObject = await service.createProduct(body);
-
     newObject
         ? res.status(200).json({ "success": "Product added with ID " + newObject._id })
         : res.status(400).json({ "error": "there was an error, please verify the body content match the schema" })

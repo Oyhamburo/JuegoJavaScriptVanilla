@@ -38,24 +38,7 @@ const modelMoongoose = mongoose.model('objects', Schema)
 export class ObjectsDaoMongo{
 
     CODE = "code";
-
-
-    // constructor() {
-    //     modelMoongoose = mongoose.model('objects', Schema)
-    // }
-
-    // async init() {
-    //     mongoose.connect(process.env.MONGO_URI, (err) => {
-    //         err
-    //             ? logger.error("⛔ Error al conectarse a MongoDB")
-    //             : logger.info("🆗 Conectados a MongoDB")
-    //     })
-    // }
-
-    // async disconnect() {
-    //     await mongoose.disconnect()
-    //     console.log('personas dao en mongodb -> cerrado')
-    // }
+    ID = "_id";
 
     async getAll() {
         try {
@@ -81,7 +64,8 @@ export class ObjectsDaoMongo{
 
     async create(object) {
         try {
-            await modelMoongoose.create(object)
+            const test = await modelMoongoose.create(object)
+            console.log(test)
             return asDtoObject(object)
         } catch (error) {
             logger.error(error);
@@ -91,7 +75,7 @@ export class ObjectsDaoMongo{
 
     async deleteById(id) {
         try {
-            const borrada = await modelMoongoose.findOneAndDelete({ [this.id]: id })
+            const borrada = await modelMoongoose.findOneAndDelete({ [this.ID]: id })
             return asDtoObject(borrada)
         } catch (error) {
             logger.error(error);
