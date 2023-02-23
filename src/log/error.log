@@ -339,3 +339,417 @@
     at async Repo.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:20:24)
     at async Service.getProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:28:28)
     at async controller.getById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:15:20)
+[2023-02-23T18:26:03.068] [ERROR] default - Error: objects validation failed: name: Path `name` is required., description: Path `description` is required., code: Path `code` is required., image: Path `image` is required.
+    at ValidationError.inspect (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:806:19)
+    at inspect (node:internal/util/inspect:365:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2273:40)
+    at Object.format (node:internal/util/inspect:2130:10)
+    at basicLayout (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    description: ValidatorError: Path `description` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'description',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    code: ValidatorError: Path `code` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'code',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    image: ValidatorError: Path `image` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'image',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'objects validation failed'
+}
+[2023-02-23T18:28:55.317] [ERROR] default - Error: objects validation failed: name: Path `name` is required., description: Path `description` is required., code: Path `code` is required., image: Path `image` is required.
+    at ValidationError.inspect (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:806:19)
+    at inspect (node:internal/util/inspect:365:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2273:40)
+    at Object.format (node:internal/util/inspect:2130:10)
+    at basicLayout (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    description: ValidatorError: Path `description` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'description',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    code: ValidatorError: Path `code` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'code',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    image: ValidatorError: Path `image` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'image',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'objects validation failed'
+}
+[2023-02-23T19:58:23.631] [ERROR] default - Error: objects validation failed: name: Path `name` is required., description: Path `description` is required., code: Path `code` is required., image: Path `image` is required.
+    at ValidationError.inspect (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:806:19)
+    at inspect (node:internal/util/inspect:365:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2273:40)
+    at Object.format (node:internal/util/inspect:2130:10)
+    at basicLayout (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    description: ValidatorError: Path `description` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'description',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    code: ValidatorError: Path `code` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'code',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    image: ValidatorError: Path `image` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'image',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'objects validation failed'
+}
+[2023-02-23T19:59:55.760] [ERROR] default - Error: npcs validation failed: faceset: Path `faceset` is required., chat: Path `chat` is required.
+    at ValidationError.inspect (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:806:19)
+    at inspect (node:internal/util/inspect:365:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2273:40)
+    at Object.format (node:internal/util/inspect:2130:10)
+    at basicLayout (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    faceset: ValidatorError: Path `faceset` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'faceset',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    chat: ValidatorError: Path `chat` is required.
+        at validate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'chat',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'npcs validation failed'
+}
+[2023-02-23T20:00:52.261] [ERROR] default - CastError: Cast to Number failed for value "63f7f013fdbfbfcf7fd75021" (type string) at path "code" for model "npcs"
+    at model.Query.exec (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at Query.then (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  messageFormat: undefined,
+  stringValue: '"63f7f013fdbfbfcf7fd75021"',
+  kind: 'Number',
+  value: '63f7f013fdbfbfcf7fd75021',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaType.applySetters (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaType._castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaType.castForQueryWrapper (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at Query.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at Query._castConditions (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:3652:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}
+[2023-02-23T20:03:32.461] [ERROR] default - CastError: Cast to Number failed for value "63f7ef97fdbfbfcf7fd75013" (type string) at path "code" for model "objects"
+    at model.Query.exec (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at Query.then (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  messageFormat: undefined,
+  stringValue: '"63f7ef97fdbfbfcf7fd75013"',
+  kind: 'Number',
+  value: '63f7ef97fdbfbfcf7fd75013',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaType.applySetters (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaType._castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaType.castForQueryWrapper (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at Query.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at Query._castConditions (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:3652:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}
+[2023-02-23T20:03:35.028] [ERROR] default - CastError: Cast to Number failed for value "63f7ef97fdbfbfcf7fd75013" (type string) at path "code" for model "objects"
+    at model.Query.exec (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at Query.then (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  messageFormat: undefined,
+  stringValue: '"63f7ef97fdbfbfcf7fd75013"',
+  kind: 'Number',
+  value: '63f7ef97fdbfbfcf7fd75013',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaType.applySetters (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaType._castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaType.castForQueryWrapper (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at Query.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at Query._castConditions (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:3652:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}
+[2023-02-23T20:05:04.535] [ERROR] default - CastError: Cast to Number failed for value "63f7efa7fdbfbfcf7fd75017" (type string) at path "code" for model "objects"
+    at model.Query.exec (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at Query.then (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  messageFormat: undefined,
+  stringValue: '"63f7efa7fdbfbfcf7fd75017"',
+  kind: 'Number',
+  value: '63f7efa7fdbfbfcf7fd75017',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaType.applySetters (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaType._castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaType.castForQueryWrapper (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at Query.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at Query._castConditions (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2501:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}
+[2023-02-23T20:05:47.812] [ERROR] default - CastError: Cast to Number failed for value "63f7ef97fdbfbfcf7fd75013" (type string) at path "code" for model "objects"
+    at model.Query.exec (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at Query.then (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  messageFormat: undefined,
+  stringValue: '"63f7ef97fdbfbfcf7fd75013"',
+  kind: 'Number',
+  value: '63f7ef97fdbfbfcf7fd75013',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaType.applySetters (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaType._castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaType.castForQueryWrapper (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at Query.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at Query._castConditions (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2501:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}
+[2023-02-23T20:07:18.720] [ERROR] default - CastError: Cast to Number failed for value "63f7efa7fdbfbfcf7fd75017" (type string) at path "code" for model "objects"
+    at model.Query.exec (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at Query.then (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  messageFormat: undefined,
+  stringValue: '"63f7efa7fdbfbfcf7fd75017"',
+  kind: 'Number',
+  value: '63f7efa7fdbfbfcf7fd75017',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaType.applySetters (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaType._castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaType.castForQueryWrapper (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at Query.cast (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at Query._castConditions (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Compumar\Desktop\jeremias\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2501:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}

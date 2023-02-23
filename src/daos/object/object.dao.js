@@ -91,7 +91,7 @@ export class ObjectsDaoMongo{
 
     async deleteById(id) {
         try {
-            const borrada = await modelMoongoose.findOneAndDelete({ [this.CODE]: id })
+            const borrada = await modelMoongoose.findOneAndDelete({ [this.id]: id })
             return asDtoObject(borrada)
         } catch (error) {
             logger.error(error);
