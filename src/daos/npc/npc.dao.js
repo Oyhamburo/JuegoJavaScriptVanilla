@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import { asDto } from '../../dtos/index.dtos.js'
 import dotenv from "dotenv";
 import { logger } from '../../utils/log/log4jsLogger.js';
+import {BaseDao} from '../BaseDao.js'
 
 dotenv.config();
 
@@ -32,32 +33,32 @@ const Schema = new mongoose.Schema({
         max: 500
     }
 })
+const modelMoongoose = mongoose.model('npcs', Schema)
 
-export class NPCsDaoMongo {
+export class NPCsDaoMongo extends BaseDao {
 
     CODE = "code";
 
 
-    constructor() {
-        this.model = mongoose.model('npcs', Schema)
-    }
+    // constructor() {
+    // }
 
-    async init() {
-        mongoose.connect(process.env.MONGO_URI, (err) => {
-            err
-                ? logger.error("⛔ Error al conectarse a MongoDB")
-                : logger.info("🆗 Conectados a MongoDB")
-        })
-    }
+    // async init() {
+    //     mongoose.connect(process.env.MONGO_URI, (err) => {
+    //         err
+    //             ? logger.error("⛔ Error al conectarse a MongoDB")
+    //             : logger.info("🆗 Conectados a MongoDB")
+    //     })
+    // }
 
-    async disconnect() {
-        await mongoose.disconnect()
-        console.log('personas dao en mongodb -> cerrado')
-    }
+    // async disconnect() {
+    //     await mongoose.disconnect()
+    //     console.log('personas dao en mongodb -> cerrado')
+    // }
 
     async getAll() {
         try {
-            const npcs = await this.model.find({})
+            const npcs = await modelMoongoose.find({})
             return asDto(npcs)
         } catch (error) {
             logger.error(error);
@@ -67,7 +68,7 @@ export class NPCsDaoMongo {
 
     async getById(code) {
         try {
-            const npc = await this.model.findOne({
+            const npc = await modelMoongoose.findOne({
                 [this.CODE]: code
             })
             return asDto(npc)
@@ -79,7 +80,7 @@ export class NPCsDaoMongo {
 
     async create(npc) {
         try {
-            await this.model.create(npc)
+            await modelMoongoose.create(npc)
             return asDto(npc)
         } catch (error) {
             logger.error(error);
@@ -89,7 +90,7 @@ export class NPCsDaoMongo {
 
     async deleteById(id) {
         try {
-            const borrada = await this.model.findOneAndDelete({ [this.CODE]: id })
+            const borrada = await modelMoongoose.findOneAndDelete({ [this.CODE]: id })
             return asDto(borrada)
         } catch (error) {
             logger.error(error);

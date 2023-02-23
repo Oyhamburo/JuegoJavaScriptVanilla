@@ -7,7 +7,7 @@ let dao
 switch (opcion) {
     case 'Mongo':
         dao = new ObjectsDaoMongo()
-        await dao.init()
+        // await dao.init()
         break
     
     default:

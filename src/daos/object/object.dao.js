@@ -33,32 +33,33 @@ const Schema = new mongoose.Schema({
         max: 500
     }
 })
+const modelMoongoose = mongoose.model('objects', Schema)
 
 export class ObjectsDaoMongo{
 
     CODE = "code";
 
 
-    constructor() {
-        this.model = mongoose.model('objects', Schema)
-    }
+    // constructor() {
+    //     modelMoongoose = mongoose.model('objects', Schema)
+    // }
 
-    async init() {
-        mongoose.connect(process.env.MONGO_URI, (err) => {
-            err
-                ? logger.error("⛔ Error al conectarse a MongoDB")
-                : logger.info("🆗 Conectados a MongoDB")
-        })
-    }
+    // async init() {
+    //     mongoose.connect(process.env.MONGO_URI, (err) => {
+    //         err
+    //             ? logger.error("⛔ Error al conectarse a MongoDB")
+    //             : logger.info("🆗 Conectados a MongoDB")
+    //     })
+    // }
 
-    async disconnect() {
-        await mongoose.disconnect()
-        console.log('personas dao en mongodb -> cerrado')
-    }
+    // async disconnect() {
+    //     await mongoose.disconnect()
+    //     console.log('personas dao en mongodb -> cerrado')
+    // }
 
     async getAll() {
         try {
-            const objects = await this.model.find({})
+            const objects = await modelMoongoose.find({})
             return asDtoObject(objects)
         } catch (error) {
             logger.error(error);
@@ -68,7 +69,7 @@ export class ObjectsDaoMongo{
 
     async getById(code) {
         try {
-            const object = await this.model.findOne({
+            const object = await modelMoongoose.findOne({
                 [this.CODE]: code
             })
             return asDtoObject(object)
@@ -80,7 +81,7 @@ export class ObjectsDaoMongo{
 
     async create(object) {
         try {
-            await this.model.create(object)
+            await modelMoongoose.create(object)
             return asDtoObject(object)
         } catch (error) {
             logger.error(error);
@@ -90,7 +91,7 @@ export class ObjectsDaoMongo{
 
     async deleteById(id) {
         try {
-            const borrada = await this.model.findOneAndDelete({ [this.CODE]: id })
+            const borrada = await modelMoongoose.findOneAndDelete({ [this.CODE]: id })
             return asDtoObject(borrada)
         } catch (error) {
             logger.error(error);
