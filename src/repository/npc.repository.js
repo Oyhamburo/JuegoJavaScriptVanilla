@@ -1,8 +1,9 @@
 import { NPCmodel } from '../models/index.models.js'
 import { NPCsDaoFactory } from '../daos/factory/index.factory.js'
 import { asDto } from '../dtos/index.dtos.js'
+import { AdaptadorNPCs } from '../dtos/adaptadores/index.adaptador.js'
 
- class npcRepo {
+class npcRepo {
     #dao
 
     constructor() {
@@ -11,14 +12,12 @@ import { asDto } from '../dtos/index.dtos.js'
 
     async getAll() {
         const npcs = await this.#dao.getAll()
-        // return npcs.map(n => new NPCmodel(n))
-        return npcs
+        return npcs.map(n => new AdaptadorNPCs(new NPCmodel(n)).devolver())
     }
 
     async getById(code) {
-        const dto = await this.#dao.getById(code)
-        // return new NPCmodel(dto)
-        return dto
+        const npc = await this.#dao.getById(code)
+        return  new AdaptadorNPCs(new NPCmodel(npc)).devolver()
     }
 
     async exists(code) {
@@ -31,8 +30,7 @@ import { asDto } from '../dtos/index.dtos.js'
 
     async removeById(code) {
         const removida = await this.#dao.deleteById(code)
-        // return new NPCmodel(removida)
-        return removida
+        return  new AdaptadorNPCs(new NPCmodel(removida)).devolver()
     }
 
     async updateById(code, object) {
@@ -40,4 +38,4 @@ import { asDto } from '../dtos/index.dtos.js'
     }
 }
 
-export {npcRepo}
+export { npcRepo }

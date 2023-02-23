@@ -4,15 +4,13 @@ class ObjectModel {
     #description
     #code
     #image
-    #stats
 
-    constructor({ id, name, description, code, faceset, chat }) {
+    constructor({ id, name, description, code, image }) {
         this.id = id
         this.name = name
         this.description = description
-        // this.code = code
-        this.faceset = faceset
-        this.chat = chat
+        this.code = code
+        this.image = image
     }
 
     get id() { return this.#id }
@@ -49,13 +47,6 @@ class ObjectModel {
     set image(image) {
         if (!image) throw new Error('"image" es un campo requerido')
         this.#image = image
-    }
-
-    get stats() { return this.#stats }
-
-    set stats(stats) {
-        if (!stats) throw new Error('"stats" es un campo requerido')
-        this.#stats = stats
     }
 }
 

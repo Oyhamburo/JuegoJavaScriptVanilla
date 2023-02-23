@@ -1,6 +1,7 @@
 import { ObjectModel } from '../models/index.models.js'
 import { ObjectDaoFactory } from '../daos/factory/index.factory.js'
 import { asDtoObject } from '../dtos/index.dtos.js'
+import { AdaptadorObjects } from '../dtos/adaptadores/index.adaptador.js'
 
 class Repo {
     #dao
@@ -11,14 +12,13 @@ class Repo {
 
     async getAll() {
         const objects = await this.#dao.getAll()
-        // return objects.map(n => new ObjectModel(n))
-        return objects
+        return objects.map(o => new AdaptadorObjects(new ObjectModel(o)).devolver())
     }
 
     async getById(code) {
         const object = await this.#dao.getById(code)
-        // return new ObjectModel(object)
-        return object
+        console.log('repositorio',object)
+        return  new AdaptadorObjects(new ObjectModel(object)).devolver()
     }
 
     async create(newObject) {
@@ -27,8 +27,7 @@ class Repo {
 
     async removeById(code) {
         const delet = await this.#dao.deleteById(code)
-        // return new ObjectModel(delet)
-        return delet
+        return  new AdaptadorObjects(new ObjectModel(delet)).devolver()
     }
 
     async updateById(code, object) {

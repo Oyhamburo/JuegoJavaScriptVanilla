@@ -10,7 +10,7 @@ class NPCmodel {
         this.id = id
         this.name = name
         this.description = description
-        // this.code = code
+        this.code = code
         this.faceset = faceset
         this.chat = chat
     }

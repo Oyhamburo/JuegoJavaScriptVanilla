@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import { asDtoObject } from '../../dtos/index.dtos.js'
 import dotenv from "dotenv";
 import { logger } from '../../utils/log/log4jsLogger.js';
+import { BaseDao } from '../BaseDao.js';
 
 dotenv.config();
 
@@ -33,7 +34,7 @@ const Schema = new mongoose.Schema({
     }
 })
 
-export class ObjectsDaoMongo {
+export class ObjectsDaoMongo{
 
     CODE = "code";
 
