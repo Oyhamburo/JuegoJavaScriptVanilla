@@ -21,7 +21,7 @@ class Repo {
     }
 
     async create(newObject) {
-        return await this.#dao.create(asDtoObject(newObject))
+        return await this.#dao.create(newObject)
     }
 
     async removeById(code) {

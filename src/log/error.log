@@ -753,3 +753,158 @@
   },
   valueType: 'string'
 }
+[2023-02-24T01:10:57.687] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:78:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:28:23)
+    at async Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:57:20)
+    at async controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:42:24)
+[2023-02-24T01:11:13.634] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:78:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:28:23)
+    at async Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:57:20)
+    at async controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:42:24)
+[2023-02-24T01:11:32.829] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:78:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:28:23)
+    at async Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:57:20)
+    at async controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:42:24)
+[2023-02-24T01:15:24.483] [ERROR] default - Error: objects validation failed: image: Path `image` is required., code: Path `code` is required., description: Path `description` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    image: ValidatorError: Path `image` is required.
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'image',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    code: ValidatorError: Path `code` is required.
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'code',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    description: ValidatorError: Path `description` is required.
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'description',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'objects validation failed'
+}
+[2023-02-24T01:16:47.517] [ERROR] default - Error: objects validation failed: image: Path `image` is required.
+    at ValidationError.inspect (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    image: ValidatorError: Path `image` is required.
+        at validate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\document.js:2903:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'image',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'objects validation failed'
+}
+[2023-02-24T01:38:17.242] [ERROR] default - TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ObjectDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:2:19)
+    at asDto (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/dtos/objects.dto.js:16:16)
+    at ObjectsDaoMongo.deleteById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/daos/object/object.dao.js:78:20)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Repo.removeById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/repository/object.repository.js:28:23)
+    at async Service.deleteProductById (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/services/object/object.service.js:57:20)
+    at async controller.remove (file:///C:/Users/Jelee/Desktop/codigo%202023/JuegoJavaScriptVanilla/src/controller/objects/objects.controller.js:42:24)
+[2023-02-24T01:38:30.316] [ERROR] default - CastError: Cast to Number failed for value "63f83ace2f26338885938ae8" (type string) at path "code" for model "objects"
+    at model.Query.exec (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4897:21)
+    at model.Query.Query.then (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:4996:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  messageFormat: undefined,
+  stringValue: '"63f83ace2f26338885938ae8"',
+  kind: 'Number',
+  value: '63f83ace2f26338885938ae8',
+  path: 'code',
+  reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!isNaN(val))
+  
+      at castNumber (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast\number.js:27:10)
+      at SchemaNumber.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:376:12)
+      at SchemaNumber.SchemaType.applySetters (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1201:12)
+      at SchemaNumber.SchemaType._castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1648:15)
+      at SchemaNumber.castForQuery (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schema\number.js:430:14)
+      at SchemaNumber.SchemaType.castForQueryWrapper (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\cast.js:342:32)
+      at model.Query.Query.cast (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:5325:12)
+      at model.Query.Query._castConditions (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2198:10)
+      at model.Query.<anonymous> (C:\Users\Jelee\Desktop\codigo 2023\JuegoJavaScriptVanilla\node_modules\mongoose\lib\query.js:2501:8) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  },
+  valueType: 'string'
+}

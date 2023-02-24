@@ -64,9 +64,8 @@ export class ObjectsDaoMongo{
 
     async create(object) {
         try {
-            const test = await modelMoongoose.create(object)
-            console.log(test)
-            return asDtoObject(object)
+            const newObject = await modelMoongoose.create(object)
+            return asDtoObject(newObject)
         } catch (error) {
             logger.error(error);
             return false;
